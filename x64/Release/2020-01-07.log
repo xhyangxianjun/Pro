@@ -1,0 +1,1254 @@
+[2020-01-07 15:06:15:257]   Start Server Succeed 
+[2020-01-07 15:06:15:258]   Listen Succeed 
+[2020-01-07 15:06:22:454]   Database connection success ! 
+[2020-01-07 15:06:22:458]   localIP =  127.0.0.1
+[2020-01-07 15:06:22:459]   ReadWorkerParam strQuery =  SELECT  table_station.ToolPara , table_station.DefectDefine, table_station.DefectScreening, table_station.Features,  table_config.NowProName,   				table_config.NowBatchName, table_config.DiskSpaceAlarm, table_config.DiskSpaceDelete ,  table_config.SysOnLine, table_config.SysLang,  				table_config.SaveOKImg, table_config.SaveNGImg, table_config.SaveCompressedOKImg, table_config.SaveCompressedNGImg, table_config.AlgorithmOnOrOff, table_config.SamplingCompressedImg,					table_config.StationDynamic FROM table_station, table_config  WHERE table_config.NowProName = table_station.ProName AND table_station.IP = '127.0.0.1'; 
+[2020-01-07 15:06:22:459]   ReadFeaturePara strLang =  ITO◊¯±Í1#ITO◊¯±Í2#ITOœﬂ≥§∂»#∏ˆ ˝#æ‡¿Î
+[2020-01-07 15:06:22:522]   Camera start connect...  
+[2020-01-07 15:06:35:423]   Send Data #ReadyOK@ 
+[2020-01-07 15:06:35:423]   Camera connect sucess 
+[2020-01-07 15:06:45:417]    Recv data : #1#ITO#1912301341_A_01_0001#123123_120201715645#0@ 
+[2020-01-07 15:06:45:425]   The current mode is 0 and SysOnLine is  0
+[2020-01-07 15:06:56:465]   RecvID size =   1 
+[2020-01-07 15:06:56:465]   ImgMat size =   1 
+[2020-01-07 15:07:06:799]   Ω·π˚ºÏ≤‚…∏—°ø™ º 
+[2020-01-07 15:07:06:799]    ReRecvData.info =  #1#ITO#1912301341_A_01_0001#123123_120201715645#0@
+[2020-01-07 15:07:06:799]    defectInfoNum =  0
+[2020-01-07 15:07:06:799]    defectInfo =  2014,1170
+[2020-01-07 15:07:06:799]    defectInfo =  1787,806
+[2020-01-07 15:07:06:800]    defectInfo =  429.000031
+[2020-01-07 15:07:06:800]    defectInfoNum =  1
+[2020-01-07 15:07:06:800]    defectInfo =  2284,1048
+[2020-01-07 15:07:06:800]    defectInfo =  2133,807
+[2020-01-07 15:07:06:800]    defectInfo =  284.000000
+[2020-01-07 15:07:06:800]    defectInfoNum =  2
+[2020-01-07 15:07:06:800]    defectInfo =  2392,839
+[2020-01-07 15:07:06:800]    defectInfo =  2372,808
+[2020-01-07 15:07:06:800]    defectInfo =  37.000061
+[2020-01-07 15:07:06:800]    defectInfoNum =  3
+[2020-01-07 15:07:06:800]    defectInfo =  2392,889
+[2020-01-07 15:07:06:800]    defectInfo =  2342,808
+[2020-01-07 15:07:06:800]    defectInfo =  95.000046
+[2020-01-07 15:07:06:800]    defectInfoNum =  4
+[2020-01-07 15:07:06:800]    defectInfo =  2392,953
+[2020-01-07 15:07:06:800]    defectInfo =  2301,808
+[2020-01-07 15:07:06:800]    defectInfo =  171.000061
+[2020-01-07 15:07:06:800]    defectInfoNum =  5
+[2020-01-07 15:07:06:800]    defectInfo =  2392,1025
+[2020-01-07 15:07:06:800]    defectInfo =  2257,808
+[2020-01-07 15:07:06:800]    defectInfo =  254.999954
+[2020-01-07 15:07:06:800]    defectInfoNum =  6
+[2020-01-07 15:07:06:800]    defectInfo =  2362,1056
+[2020-01-07 15:07:06:800]    defectInfo =  2207,808
+[2020-01-07 15:07:06:800]    defectInfo =  292.999969
+[2020-01-07 15:07:06:800]    defectInfoNum =  7
+[2020-01-07 15:07:06:800]    defectInfo =  1997,1187
+[2020-01-07 15:07:06:800]    defectInfo =  1760,808
+[2020-01-07 15:07:06:800]    defectInfo =  447.000031
+[2020-01-07 15:07:06:800]    defectInfoNum =  8
+[2020-01-07 15:07:06:800]    defectInfo =  1867,1119
+[2020-01-07 15:07:06:800]    defectInfo =  1673,808
+[2020-01-07 15:07:06:800]    defectInfo =  367.000000
+[2020-01-07 15:07:06:800]    defectInfoNum =  9
+[2020-01-07 15:07:06:800]    defectInfo =  2161,1130
+[2020-01-07 15:07:06:800]    defectInfo =  1961,808
+[2020-01-07 15:07:06:800]    defectInfo =  379.005249
+[2020-01-07 15:07:06:800]    defectInfoNum =  10
+[2020-01-07 15:07:06:800]    defectInfo =  2236,1153
+[2020-01-07 15:07:06:800]    defectInfo =  2021,808
+[2020-01-07 15:07:06:800]    defectInfo =  406.000031
+[2020-01-07 15:07:06:800]    defectInfoNum =  11
+[2020-01-07 15:07:06:800]    defectInfo =  1950,1161
+[2020-01-07 15:07:06:800]    defectInfo =  1729,808
+[2020-01-07 15:07:06:800]    defectInfo =  417.000000
+[2020-01-07 15:07:06:800]    defectInfoNum =  12
+[2020-01-07 15:07:06:800]    defectInfo =  2190,1128
+[2020-01-07 15:07:06:800]    defectInfo =  1990,808
+[2020-01-07 15:07:06:800]    defectInfo =  377.000000
+[2020-01-07 15:07:06:800]    defectInfoNum =  13
+[2020-01-07 15:07:06:800]    defectInfo =  1777,1087
+[2020-01-07 15:07:06:800]    defectInfo =  1603,808
+[2020-01-07 15:07:06:800]    defectInfo =  328.000000
+[2020-01-07 15:07:06:800]    defectInfoNum =  14
+[2020-01-07 15:07:06:800]    defectInfo =  2194,1060
+[2020-01-07 15:07:06:800]    defectInfo =  2037,808
+[2020-01-07 15:07:06:800]    defectInfo =  296.999969
+[2020-01-07 15:07:06:800]    defectInfoNum =  15
+[2020-01-07 15:07:06:800]    defectInfo =  2143,1126
+[2020-01-07 15:07:06:800]    defectInfo =  1944,808
+[2020-01-07 15:07:06:800]    defectInfo =  374.999969
+[2020-01-07 15:07:06:800]    defectInfoNum =  16
+[2020-01-07 15:07:06:800]    defectInfo =  1958,919
+[2020-01-07 15:07:06:800]    defectInfo =  1889,808
+[2020-01-07 15:07:06:800]    defectInfo =  131.000000
+[2020-01-07 15:07:06:800]    defectInfoNum =  17
+[2020-01-07 15:07:06:800]    defectInfo =  2256,1053
+[2020-01-07 15:07:06:800]    defectInfo =  2103,809
+[2020-01-07 15:07:06:800]    defectInfo =  288.000031
+[2020-01-07 15:07:06:800]    defectInfoNum =  18
+[2020-01-07 15:07:06:800]    defectInfo =  2212,1056
+[2020-01-07 15:07:06:800]    defectInfo =  2058,809
+[2020-01-07 15:07:06:800]    defectInfo =  292.000000
+[2020-01-07 15:07:06:800]    defectInfoNum =  19
+[2020-01-07 15:07:06:800]    defectInfo =  2258,956
+[2020-01-07 15:07:06:800]    defectInfo =  2167,810
+[2020-01-07 15:07:06:800]    defectInfo =  172.000015
+[2020-01-07 15:07:06:800]    defectInfoNum =  20
+[2020-01-07 15:07:06:800]    defectInfo =  1698,1026
+[2020-01-07 15:07:06:800]    defectInfo =  1563,810
+[2020-01-07 15:07:06:800]    defectInfo =  254.999985
+[2020-01-07 15:07:06:800]    defectInfoNum =  21
+[2020-01-07 15:07:06:800]    defectInfo =  2039,1133
+[2020-01-07 15:07:06:800]    defectInfo =  1837,810
+[2020-01-07 15:07:06:800]    defectInfo =  381.000031
+[2020-01-07 15:07:06:800]    defectInfoNum =  22
+[2020-01-07 15:07:06:800]    defectInfo =  1981,1083
+[2020-01-07 15:07:06:800]    defectInfo =  1812,812
+[2020-01-07 15:07:06:800]    defectInfo =  318.999969
+[2020-01-07 15:07:06:800]    defectInfoNum =  23
+[2020-01-07 15:07:06:800]    defectInfo =  1660,1009
+[2020-01-07 15:07:06:800]    defectInfo =  1568,860
+[2020-01-07 15:07:06:800]    defectInfo =  175.002869
+[2020-01-07 15:07:06:800]    defectInfoNum =  24
+[2020-01-07 15:07:06:800]    defectInfo =  2102,1152
+[2020-01-07 15:07:06:800]    defectInfo =  1964,930
+[2020-01-07 15:07:06:800]    defectInfo =  262.001953
+[2020-01-07 15:07:06:800]    defectInfoNum =  25
+[2020-01-07 15:07:06:800]    defectInfo =  2385,1160
+[2020-01-07 15:07:06:800]    defectInfo =  2267,970
+[2020-01-07 15:07:06:800]    defectInfo =  222.999985
+[2020-01-07 15:07:06:800]    defectInfoNum =  26
+[2020-01-07 15:07:06:800]    defectInfo =  1885,1365
+[2020-01-07 15:07:06:800]    defectInfo =  1672,1027
+[2020-01-07 15:07:06:800]    defectInfo =  399.005035
+[2020-01-07 15:07:06:800]    defectInfoNum =  27
+[2020-01-07 15:07:06:800]    defectInfo =  1887,1324
+[2020-01-07 15:07:06:800]    defectInfo =  1723,1065
+[2020-01-07 15:07:06:800]    defectInfo =  306.006561
+[2020-01-07 15:07:06:800]    defectInfoNum =  28
+[2020-01-07 15:07:06:800]    defectInfo =  2392,1104
+[2020-01-07 15:07:06:800]    defectInfo =  2368,1066
+[2020-01-07 15:07:06:800]    defectInfo =  43.999966
+[2020-01-07 15:07:06:800]    defectInfoNum =  29
+[2020-01-07 15:07:06:800]    defectInfo =  2337,1129
+[2020-01-07 15:07:06:800]    defectInfo =  2297,1069
+[2020-01-07 15:07:06:800]    defectInfo =  72.027763
+[2020-01-07 15:07:06:800]    defectInfoNum =  30
+[2020-01-07 15:07:06:800]    defectInfo =  2232,1124
+[2020-01-07 15:07:06:800]    defectInfo =  2200,1069
+[2020-01-07 15:07:06:800]    defectInfo =  64.031250
+[2020-01-07 15:07:06:801]    defectInfoNum =  31
+[2020-01-07 15:07:06:801]    defectInfo =  2259,1130
+[2020-01-07 15:07:06:801]    defectInfo =  2220,1069
+[2020-01-07 15:07:06:801]    defectInfo =  72.000008
+[2020-01-07 15:07:06:801]    defectInfoNum =  32
+[2020-01-07 15:07:06:801]    defectInfo =  2306,1127
+[2020-01-07 15:07:06:801]    defectInfo =  2266,1069
+[2020-01-07 15:07:06:801]    defectInfo =  71.063286
+[2020-01-07 15:07:06:801]    defectInfoNum =  33
+[2020-01-07 15:07:06:801]    defectInfo =  1921,1318
+[2020-01-07 15:07:06:801]    defectInfo =  1784,1097
+[2020-01-07 15:07:06:801]    defectInfo =  260.001923
+[2020-01-07 15:07:06:801]    defectInfoNum =  34
+[2020-01-07 15:07:06:801]    defectInfo =  2351,1150
+[2020-01-07 15:07:06:801]    defectInfo =  2342,1137
+[2020-01-07 15:07:06:801]    defectInfo =  16.031244
+[2020-01-07 15:07:06:801]    defectInfoNum =  35
+[2020-01-07 15:07:06:801]    defectInfo =  2251,1154
+[2020-01-07 15:07:06:801]    defectInfo =  2239,1137
+[2020-01-07 15:07:06:801]    defectInfo =  20.025003
+[2020-01-07 15:07:06:801]    defectInfoNum =  36
+[2020-01-07 15:07:06:801]    defectInfo =  2210,1160
+[2020-01-07 15:07:06:801]    defectInfo =  2196,1138
+[2020-01-07 15:07:06:801]    defectInfo =  27.000029
+[2020-01-07 15:07:06:801]    defectInfoNum =  37
+[2020-01-07 15:07:06:801]    defectInfo =  2215,1217
+[2020-01-07 15:07:06:801]    defectInfo =  2166,1139
+[2020-01-07 15:07:06:801]    defectInfo =  92.000008
+[2020-01-07 15:07:06:801]    defectInfoNum =  38
+[2020-01-07 15:07:06:801]    defectInfo =  2352,1201
+[2020-01-07 15:07:06:801]    defectInfo =  2314,1139
+[2020-01-07 15:07:06:801]    defectInfo =  72.999969
+[2020-01-07 15:07:06:801]    defectInfoNum =  39
+[2020-01-07 15:07:06:801]    defectInfo =  2273,1153
+[2020-01-07 15:07:06:801]    defectInfo =  2264,1140
+[2020-01-07 15:07:06:801]    defectInfo =  15.999938
+[2020-01-07 15:07:06:801]    defectInfoNum =  40
+[2020-01-07 15:07:06:801]    defectInfo =  2066,1199
+[2020-01-07 15:07:06:801]    defectInfo =  2034,1147
+[2020-01-07 15:07:06:801]    defectInfo =  61.008163
+[2020-01-07 15:07:06:801]    defectInfoNum =  41
+[2020-01-07 15:07:06:801]    defectInfo =  1967,1276
+[2020-01-07 15:07:06:801]    defectInfo =  1888,1153
+[2020-01-07 15:07:06:801]    defectInfo =  146.013718
+[2020-01-07 15:07:06:801]    defectInfoNum =  42
+[2020-01-07 15:07:06:801]    defectInfo =  2290,1181
+[2020-01-07 15:07:06:801]    defectInfo =  2279,1163
+[2020-01-07 15:07:06:801]    defectInfo =  21.000004
+[2020-01-07 15:07:06:801]    defectInfoNum =  43
+[2020-01-07 15:07:06:801]    defectInfo =  2379,1195
+[2020-01-07 15:07:06:801]    defectInfo =  2363,1169
+[2020-01-07 15:07:06:801]    defectInfo =  30.999969
+[2020-01-07 15:07:06:801]    defectInfoNum =  44
+[2020-01-07 15:07:06:801]    defectInfo =  2277,1193
+[2020-01-07 15:07:06:801]    defectInfo =  2270,1181
+[2020-01-07 15:07:06:801]    defectInfo =  13.999943
+[2020-01-07 15:07:06:801]    defectInfoNum =  45
+[2020-01-07 15:07:06:801]    defectInfo =  2108,1243
+[2020-01-07 15:07:06:801]    defectInfo =  2068,1181
+[2020-01-07 15:07:06:801]    defectInfo =  74.006744
+[2020-01-07 15:07:06:801]    defectInfoNum =  46
+[2020-01-07 15:07:06:801]    defectInfo =  2265,1198
+[2020-01-07 15:07:06:801]    defectInfo =  2257,1187
+[2020-01-07 15:07:06:801]    defectInfo =  14.000008
+[2020-01-07 15:07:06:801]    defectInfoNum =  47
+[2020-01-07 15:07:06:801]    defectInfo =  1973,1199
+[2020-01-07 15:07:06:801]    defectInfo =  1966,1189
+[2020-01-07 15:07:06:801]    defectInfo =  12.041574
+[2020-01-07 15:07:06:801]    defectInfoNum =  48
+[2020-01-07 15:07:06:801]    defectInfo =  2301,1199
+[2020-01-07 15:07:06:801]    defectInfo =  2298,1193
+[2020-01-07 15:07:06:801]    defectInfo =  6.999997
+[2020-01-07 15:07:06:801]    defectInfoNum =  49
+[2020-01-07 15:07:06:801]    defectInfo =  2395,1221
+[2020-01-07 15:07:06:801]    defectInfo =  2385,1204
+[2020-01-07 15:07:06:801]    defectInfo =  19.000010
+[2020-01-07 15:07:06:801]    defectInfoNum =  50
+[2020-01-07 15:07:06:801]    defectInfo =  2296,1248
+[2020-01-07 15:07:06:801]    defectInfo =  2272,1211
+[2020-01-07 15:07:06:801]    defectInfo =  44.000057
+[2020-01-07 15:07:06:801]    defectInfoNum =  51
+[2020-01-07 15:07:06:801]    defectInfo =  1992,1226
+[2020-01-07 15:07:06:801]    defectInfo =  1986,1217
+[2020-01-07 15:07:06:801]    defectInfo =  11.000040
+[2020-01-07 15:07:06:801]    defectInfoNum =  52
+[2020-01-07 15:07:06:801]    defectInfo =  2216,1243
+[2020-01-07 15:07:06:801]    defectInfo =  2200,1218
+[2020-01-07 15:07:06:801]    defectInfo =  30.000050
+[2020-01-07 15:07:06:801]    defectInfoNum =  53
+[2020-01-07 15:07:06:801]    defectInfo =  2321,1261
+[2020-01-07 15:07:06:801]    defectInfo =  2302,1233
+[2020-01-07 15:07:06:801]    defectInfo =  34.014645
+[2020-01-07 15:07:06:801]    defectInfoNum =  54
+[2020-01-07 15:07:06:801]    defectInfo =  2274,1263
+[2020-01-07 15:07:06:801]    defectInfo =  2255,1235
+[2020-01-07 15:07:06:801]    defectInfo =  34.014713
+[2020-01-07 15:07:06:801]    defectInfoNum =  55
+[2020-01-07 15:07:06:801]    defectInfo =  2067,1252
+[2020-01-07 15:07:06:801]    defectInfo =  2055,1235
+[2020-01-07 15:07:06:801]    defectInfo =  21.023817
+[2020-01-07 15:07:06:801]    defectInfoNum =  56
+[2020-01-07 15:07:06:801]    defectInfo =  2036,1250
+[2020-01-07 15:07:06:801]    defectInfo =  2028,1237
+[2020-01-07 15:07:06:801]    defectInfo =  15.999990
+[2020-01-07 15:07:06:801]    defectInfoNum =  57
+[2020-01-07 15:07:06:801]    defectInfo =  2025,1279
+[2020-01-07 15:07:06:801]    defectInfo =  2007,1250
+[2020-01-07 15:07:06:801]    defectInfo =  33.999958
+[2020-01-07 15:07:06:801]    defectInfoNum =  58
+[2020-01-07 15:07:06:801]    defectInfo =  2234,1272
+[2020-01-07 15:07:06:801]    defectInfo =  2222,1252
+[2020-01-07 15:07:06:801]    defectInfo =  22.999937
+[2020-01-07 15:07:06:802]    defectInfoNum =  59
+[2020-01-07 15:07:06:802]    defectInfo =  2331,1305
+[2020-01-07 15:07:06:802]    defectInfo =  2303,1260
+[2020-01-07 15:07:06:802]    defectInfo =  53.000050
+[2020-01-07 15:07:06:802]    defectInfoNum =  60
+[2020-01-07 15:07:06:802]    defectInfo =  2097,1300
+[2020-01-07 15:07:06:802]    defectInfo =  2073,1262
+[2020-01-07 15:07:06:802]    defectInfo =  44.999996
+[2020-01-07 15:07:06:802]    defectInfoNum =  61
+[2020-01-07 15:07:06:802]    defectInfo =  2362,1296
+[2020-01-07 15:07:06:802]    defectInfo =  2359,1291
+[2020-01-07 15:07:06:802]    defectInfo =  6.000038
+[2020-01-07 15:07:06:802]    defectInfoNum =  62
+[2020-01-07 15:07:06:802]    defectInfo =  2305,1312
+[2020-01-07 15:07:06:802]    defectInfo =  2293,1293
+[2020-01-07 15:07:06:802]    defectInfo =  23.000051
+[2020-01-07 15:07:06:802]    defectInfoNum =  63
+[2020-01-07 15:07:06:802]    defectInfo =  2054,1326
+[2020-01-07 15:07:06:802]    defectInfo =  2050,1319
+[2020-01-07 15:07:06:802]    defectInfo =  8.999992
+[2020-01-07 15:07:06:802]    defectInfoNum =  64
+[2020-01-07 15:07:06:802]    defectInfo =  1917,1373
+[2020-01-07 15:07:06:802]    defectInfo =  1894,1336
+[2020-01-07 15:07:06:802]    defectInfo =  44.000027
+[2020-01-07 15:07:06:802]    defectInfoNum =  65
+[2020-01-07 15:07:06:802]    defectInfo =  1907,1397
+[2020-01-07 15:07:06:802]    defectInfo =  1892,1374
+[2020-01-07 15:07:06:802]    defectInfo =  27.018541
+[2020-01-07 15:07:06:802]    defectInfoNum =  66
+[2020-01-07 15:07:06:802]    defectInfo =  2054,1421
+[2020-01-07 15:07:06:802]    defectInfo =  2044,1404
+[2020-01-07 15:07:06:802]    defectInfo =  20.000032
+[2020-01-07 15:07:06:802]    defectInfoNum =  67
+[2020-01-07 15:07:06:802]    defectInfo =  2255,1478
+[2020-01-07 15:07:06:802]    defectInfo =  2218,1418
+[2020-01-07 15:07:06:802]    defectInfo =  70.000015
+[2020-01-07 15:07:06:802]    defectInfoNum =  68
+[2020-01-07 15:07:06:802]    defectInfo =  2072,1449
+[2020-01-07 15:07:06:802]    defectInfo =  2061,1431
+[2020-01-07 15:07:06:802]    defectInfo =  21.999945
+[2020-01-07 15:07:06:802]    defectInfoNum =  69
+[2020-01-07 15:07:06:802]    defectInfo =  2217,1447
+[2020-01-07 15:07:06:802]    defectInfo =  2211,1438
+[2020-01-07 15:07:06:802]    defectInfo =  10.999989
+[2020-01-07 15:07:06:802]    defectInfoNum =  70
+[2020-01-07 15:07:06:802]    defectInfo =  2254,1554
+[2020-01-07 15:07:06:802]    defectInfo =  2180,1440
+[2020-01-07 15:07:06:802]    defectInfo =  136.033081
+[2020-01-07 15:07:06:802]    defectInfoNum =  71
+[2020-01-07 15:07:06:802]    defectInfo =  2022,1481
+[2020-01-07 15:07:06:802]    defectInfo =  2002,1448
+[2020-01-07 15:07:06:802]    defectInfo =  37.999969
+[2020-01-07 15:07:06:802]    defectInfoNum =  72
+[2020-01-07 15:07:06:802]    defectInfo =  2358,1477
+[2020-01-07 15:07:06:802]    defectInfo =  2341,1450
+[2020-01-07 15:07:06:802]    defectInfo =  31.999992
+[2020-01-07 15:07:06:802]    defectInfoNum =  73
+[2020-01-07 15:07:06:802]    defectInfo =  2255,1508
+[2020-01-07 15:07:06:802]    defectInfo =  2223,1456
+[2020-01-07 15:07:06:802]    defectInfo =  62.000042
+[2020-01-07 15:07:06:802]    defectInfoNum =  74
+[2020-01-07 15:07:06:802]    defectInfo =  2195,1502
+[2020-01-07 15:07:06:802]    defectInfo =  2177,1478
+[2020-01-07 15:07:06:802]    defectInfo =  29.068911
+[2020-01-07 15:07:06:802]    defectInfoNum =  75
+[2020-01-07 15:07:06:802]    defectInfo =  2315,1493
+[2020-01-07 15:07:06:802]    defectInfo =  2311,1486
+[2020-01-07 15:07:06:802]    defectInfo =  8.000021
+[2020-01-07 15:07:06:802]    defectInfoNum =  76
+[2020-01-07 15:07:06:802]    defectInfo =  2004,1511
+[2020-01-07 15:07:06:802]    defectInfo =  1990,1488
+[2020-01-07 15:07:06:802]    defectInfo =  27.000029
+[2020-01-07 15:07:06:802]    defectInfoNum =  77
+[2020-01-07 15:07:06:802]    defectInfo =  2369,1498
+[2020-01-07 15:07:06:802]    defectInfo =  2364,1489
+[2020-01-07 15:07:06:802]    defectInfo =  11.045321
+[2020-01-07 15:07:06:802]    defectInfoNum =  78
+[2020-01-07 15:07:06:802]    defectInfo =  1979,1518
+[2020-01-07 15:07:06:802]    defectInfo =  1966,1497
+[2020-01-07 15:07:06:802]    defectInfo =  25.019955
+[2020-01-07 15:07:06:802]    defectInfoNum =  79
+[2020-01-07 15:07:06:802]    defectInfo =  2387,1528
+[2020-01-07 15:07:06:802]    defectInfo =  2375,1508
+[2020-01-07 15:07:06:802]    defectInfo =  23.021811
+[2020-01-07 15:07:06:802]    defectInfoNum =  80
+[2020-01-07 15:07:06:802]    defectInfo =  2027,1544
+[2020-01-07 15:07:06:802]    defectInfo =  2011,1519
+[2020-01-07 15:07:06:802]    defectInfo =  29.000025
+[2020-01-07 15:07:06:802]    defectInfoNum =  81
+[2020-01-07 15:07:06:802]    defectInfo =  2281,1550
+[2020-01-07 15:07:06:802]    defectInfo =  2267,1526
+[2020-01-07 15:07:06:802]    defectInfo =  28.000002
+[2020-01-07 15:07:06:802]    defectInfoNum =  82
+[2020-01-07 15:07:06:802]    defectInfo =  2231,1559
+[2020-01-07 15:07:06:802]    defectInfo =  2225,1549
+[2020-01-07 15:07:06:802]    defectInfo =  12.000012
+[2020-01-07 15:07:06:802]    defectInfoNum =  83
+[2020-01-07 15:07:06:802]    defectInfo =  2373,1585
+[2020-01-07 15:07:06:802]    defectInfo =  2352,1551
+[2020-01-07 15:07:06:802]    defectInfo =  39.999962
+[2020-01-07 15:07:06:802]    defectInfoNum =  84
+[2020-01-07 15:07:06:802]    defectInfo =  2210,1578
+[2020-01-07 15:07:06:802]    defectInfo =  2197,1557
+[2020-01-07 15:07:06:802]    defectInfo =  24.999983
+[2020-01-07 15:07:06:802]    defectInfoNum =  85
+[2020-01-07 15:07:06:802]    defectInfo =  2070,1611
+[2020-01-07 15:07:06:802]    defectInfo =  2036,1559
+[2020-01-07 15:07:06:802]    defectInfo =  62.008076
+[2020-01-07 15:07:06:802]    defectInfoNum =  86
+[2020-01-07 15:07:06:802]    defectInfo =  2294,1661
+[2020-01-07 15:07:06:802]    defectInfo =  2239,1571
+[2020-01-07 15:07:06:802]    defectInfo =  105.004807
+[2020-01-07 15:07:06:802]    defectInfoNum =  87
+[2020-01-07 15:07:06:803]    defectInfo =  2317,1654
+[2020-01-07 15:07:06:803]    defectInfo =  2268,1576
+[2020-01-07 15:07:06:803]    defectInfo =  91.999992
+[2020-01-07 15:07:06:803]    defectInfoNum =  88
+[2020-01-07 15:07:06:803]    defectInfo =  2312,1598
+[2020-01-07 15:07:06:803]    defectInfo =  2300,1580
+[2020-01-07 15:07:06:803]    defectInfo =  22.000029
+[2020-01-07 15:07:06:803]    defectInfoNum =  89
+[2020-01-07 15:07:06:803]    defectInfo =  2069,1669
+[2020-01-07 15:07:06:803]    defectInfo =  2021,1591
+[2020-01-07 15:07:06:803]    defectInfo =  92.000008
+[2020-01-07 15:07:06:803]    defectInfoNum =  90
+[2020-01-07 15:07:06:803]    defectInfo =  2352,1629
+[2020-01-07 15:07:06:803]    defectInfo =  2334,1600
+[2020-01-07 15:07:06:803]    defectInfo =  34.000042
+[2020-01-07 15:07:06:803]    defectInfoNum =  91
+[2020-01-07 15:07:06:803]    defectInfo =  2392,1614
+[2020-01-07 15:07:06:803]    defectInfo =  2382,1600
+[2020-01-07 15:07:06:803]    defectInfo =  17.029385
+[2020-01-07 15:07:06:803]    defectInfoNum =  92
+[2020-01-07 15:07:06:803]    defectInfo =  2369,1691
+[2020-01-07 15:07:06:803]    defectInfo =  2325,1619
+[2020-01-07 15:07:06:803]    defectInfo =  84.000061
+[2020-01-07 15:07:06:803]    defectInfoNum =  93
+[2020-01-07 15:07:06:803]    defectInfo =  2205,1658
+[2020-01-07 15:07:06:803]    defectInfo =  2191,1634
+[2020-01-07 15:07:06:803]    defectInfo =  27.018492
+[2020-01-07 15:07:06:803]    defectInfoNum =  94
+[2020-01-07 15:07:06:803]    defectInfo =  2256,1651
+[2020-01-07 15:07:06:803]    defectInfo =  2247,1637
+[2020-01-07 15:07:06:803]    defectInfo =  16.000002
+[2020-01-07 15:07:06:803]    defectInfoNum =  95
+[2020-01-07 15:07:06:803]    defectInfo =  2372,1662
+[2020-01-07 15:07:06:803]    defectInfo =  2367,1653
+[2020-01-07 15:07:06:803]    defectInfo =  10.000069
+[2020-01-07 15:07:06:803]    defectInfoNum =  96
+[2020-01-07 15:07:06:803]    defectInfo =  2288,1790
+[2020-01-07 15:07:06:803]    defectInfo =  2219,1681
+[2020-01-07 15:07:06:803]    defectInfo =  128.999985
+[2020-01-07 15:07:06:803]    defectInfoNum =  97
+[2020-01-07 15:07:06:803]    defectInfo =  2315,1748
+[2020-01-07 15:07:06:803]    defectInfo =  2276,1682
+[2020-01-07 15:07:06:803]    defectInfo =  77.006531
+[2020-01-07 15:07:06:803]    defectInfoNum =  98
+[2020-01-07 15:07:06:803]    defectInfo =  2346,1743
+[2020-01-07 15:07:06:803]    defectInfo =  2331,1720
+[2020-01-07 15:07:06:803]    defectInfo =  27.000082
+[2020-01-07 15:07:06:803]    defectInfoNum =  99
+[2020-01-07 15:07:06:803]    defectInfo =  2180,1788
+[2020-01-07 15:07:06:803]    defectInfo =  2169,1771
+[2020-01-07 15:07:06:803]    defectInfo =  20.000032
+[2020-01-07 15:07:06:812]    NG Small Img Num = 0
+[2020-01-07 15:07:06:812]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:812]    NG Small Img Num = 1
+[2020-01-07 15:07:06:812]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:812]    NG Small Img Num = 2
+[2020-01-07 15:07:06:812]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:812]    NG Small Img Num = 3
+[2020-01-07 15:07:06:812]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:813]    NG Small Img Num = 4
+[2020-01-07 15:07:06:813]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:813]    NG Small Img Num = 5
+[2020-01-07 15:07:06:813]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:813]    NG Small Img Num = 6
+[2020-01-07 15:07:06:813]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:813]    NG Small Img Num = 7
+[2020-01-07 15:07:06:813]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:813]    NG Small Img Num = 8
+[2020-01-07 15:07:06:813]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:813]    NG Small Img Num = 9
+[2020-01-07 15:07:06:813]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:814]    NG Small Img Num = 10
+[2020-01-07 15:07:06:814]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:814]    NG Small Img Num = 11
+[2020-01-07 15:07:06:814]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:814]    NG Small Img Num = 12
+[2020-01-07 15:07:06:814]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:814]    NG Small Img Num = 13
+[2020-01-07 15:07:06:814]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:814]    NG Small Img Num = 14
+[2020-01-07 15:07:06:814]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:815]    NG Small Img Num = 15
+[2020-01-07 15:07:06:815]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:815]    NG Small Img Num = 16
+[2020-01-07 15:07:06:815]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:815]    NG Small Img Num = 17
+[2020-01-07 15:07:06:815]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:815]    NG Small Img Num = 18
+[2020-01-07 15:07:06:815]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:815]    NG Small Img Num = 19
+[2020-01-07 15:07:06:815]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:816]    NG Small Img Num = 20
+[2020-01-07 15:07:06:816]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:816]    NG Small Img Num = 21
+[2020-01-07 15:07:06:816]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:816]    NG Small Img Num = 22
+[2020-01-07 15:07:06:816]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:816]    NG Small Img Num = 23
+[2020-01-07 15:07:06:816]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:816]    NG Small Img Num = 24
+[2020-01-07 15:07:06:816]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:816]    NG Small Img Num = 25
+[2020-01-07 15:07:06:817]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:817]    NG Small Img Num = 26
+[2020-01-07 15:07:06:817]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:817]    NG Small Img Num = 27
+[2020-01-07 15:07:06:817]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:817]    NG Small Img Num = 28
+[2020-01-07 15:07:06:817]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:817]    NG Small Img Num = 29
+[2020-01-07 15:07:06:817]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:817]    NG Small Img Num = 30
+[2020-01-07 15:07:06:817]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:817]    NG Small Img Num = 31
+[2020-01-07 15:07:06:817]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:818]    NG Small Img Num = 32
+[2020-01-07 15:07:06:818]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:818]    NG Small Img Num = 33
+[2020-01-07 15:07:06:818]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:818]    NG Small Img Num = 34
+[2020-01-07 15:07:06:818]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:818]    NG Small Img Num = 35
+[2020-01-07 15:07:06:818]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:818]    NG Small Img Num = 36
+[2020-01-07 15:07:06:818]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:818]    NG Small Img Num = 37
+[2020-01-07 15:07:06:818]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:819]    NG Small Img Num = 38
+[2020-01-07 15:07:06:819]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:819]    NG Small Img Num = 39
+[2020-01-07 15:07:06:819]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:819]    NG Small Img Num = 40
+[2020-01-07 15:07:06:819]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:819]    NG Small Img Num = 41
+[2020-01-07 15:07:06:819]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:819]    NG Small Img Num = 42
+[2020-01-07 15:07:06:819]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:820]    NG Small Img Num = 43
+[2020-01-07 15:07:06:820]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:820]    NG Small Img Num = 44
+[2020-01-07 15:07:06:820]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:820]    NG Small Img Num = 45
+[2020-01-07 15:07:06:820]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:820]    NG Small Img Num = 46
+[2020-01-07 15:07:06:820]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:820]    NG Small Img Num = 47
+[2020-01-07 15:07:06:820]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:820]    NG Small Img Num = 48
+[2020-01-07 15:07:06:820]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:820]    NG Small Img Num = 49
+[2020-01-07 15:07:06:821]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:821]    NG Small Img Num = 50
+[2020-01-07 15:07:06:821]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:821]    NG Small Img Num = 51
+[2020-01-07 15:07:06:821]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:821]    NG Small Img Num = 52
+[2020-01-07 15:07:06:821]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:821]    NG Small Img Num = 53
+[2020-01-07 15:07:06:821]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:821]    NG Small Img Num = 54
+[2020-01-07 15:07:06:821]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:821]    NG Small Img Num = 55
+[2020-01-07 15:07:06:821]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:821]    NG Small Img Num = 56
+[2020-01-07 15:07:06:821]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:822]    NG Small Img Num = 57
+[2020-01-07 15:07:06:822]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:822]    NG Small Img Num = 58
+[2020-01-07 15:07:06:822]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:822]    NG Small Img Num = 59
+[2020-01-07 15:07:06:822]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:822]    NG Small Img Num = 60
+[2020-01-07 15:07:06:822]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:822]    NG Small Img Num = 61
+[2020-01-07 15:07:06:822]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:822]    NG Small Img Num = 62
+[2020-01-07 15:07:06:822]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:822]    NG Small Img Num = 63
+[2020-01-07 15:07:06:822]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:822]    NG Small Img Num = 64
+[2020-01-07 15:07:06:822]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:822]    NG Small Img Num = 65
+[2020-01-07 15:07:06:823]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:823]    NG Small Img Num = 66
+[2020-01-07 15:07:06:823]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:823]    NG Small Img Num = 67
+[2020-01-07 15:07:06:823]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:823]    NG Small Img Num = 68
+[2020-01-07 15:07:06:823]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:823]    NG Small Img Num = 69
+[2020-01-07 15:07:06:823]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:823]    NG Small Img Num = 70
+[2020-01-07 15:07:06:823]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:823]    NG Small Img Num = 71
+[2020-01-07 15:07:06:823]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:823]    NG Small Img Num = 72
+[2020-01-07 15:07:06:823]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:823]    NG Small Img Num = 73
+[2020-01-07 15:07:06:823]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:823]    NG Small Img Num = 74
+[2020-01-07 15:07:06:823]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:823]    NG Small Img Num = 75
+[2020-01-07 15:07:06:823]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:824]    NG Small Img Num = 76
+[2020-01-07 15:07:06:824]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:824]    NG Small Img Num = 77
+[2020-01-07 15:07:06:824]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:824]    NG Small Img Num = 78
+[2020-01-07 15:07:06:824]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:824]    NG Small Img Num = 79
+[2020-01-07 15:07:06:824]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:824]    NG Small Img Num = 80
+[2020-01-07 15:07:06:824]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:824]    NG Small Img Num = 81
+[2020-01-07 15:07:06:824]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:824]    NG Small Img Num = 82
+[2020-01-07 15:07:06:824]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:825]    NG Small Img Num = 83
+[2020-01-07 15:07:06:825]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:825]    NG Small Img Num = 84
+[2020-01-07 15:07:06:825]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:825]    NG Small Img Num = 85
+[2020-01-07 15:07:06:825]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:825]    NG Small Img Num = 86
+[2020-01-07 15:07:06:825]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:825]    NG Small Img Num = 87
+[2020-01-07 15:07:06:825]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:825]    NG Small Img Num = 88
+[2020-01-07 15:07:06:825]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:825]    NG Small Img Num = 89
+[2020-01-07 15:07:06:825]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:826]    NG Small Img Num = 90
+[2020-01-07 15:07:06:826]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:826]    NG Small Img Num = 91
+[2020-01-07 15:07:06:826]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:826]    NG Small Img Num = 92
+[2020-01-07 15:07:06:826]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:826]    NG Small Img Num = 93
+[2020-01-07 15:07:06:826]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:826]    NG Small Img Num = 94
+[2020-01-07 15:07:06:826]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:826]    NG Small Img Num = 95
+[2020-01-07 15:07:06:826]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:826]    NG Small Img Num = 96
+[2020-01-07 15:07:06:826]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:826]    NG Small Img Num = 97
+[2020-01-07 15:07:06:826]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:826]    NG Small Img Num = 98
+[2020-01-07 15:07:06:826]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:826]    NG Small Img Num = 99
+[2020-01-07 15:07:06:826]    current Img ProductID = @l>6
+[2020-01-07 15:07:06:835]   Ω·π˚ºÏ≤‚…∏—°Ω· ¯ 
+[2020-01-07 15:07:06:838]    bmp_new_name =  D:\Image\ITO\1912301341_A_01_0001\OriginalNG\123123_120201715645_NG.bmp
+[2020-01-07 15:07:06:844]   ø™ º±£¥ÊNG-bmp‘≠Õº 
+[2020-01-07 15:07:07:148]   ±£¥ÊNG-bmp‘≠ÕºΩ· ¯ 
+[2020-01-07 15:07:07:623]   ø™ º±£¥Êjpg—πÀıÕº 
+[2020-01-07 15:07:09:672]   Ω· ¯±£¥Êjpg—πÀıÕº 
+[2020-01-07 15:07:09:674]   Sending message data : #123123_120201715645#100#0#1@ 
+[2020-01-07 15:07:09:677]   ..........next ...... 
+[2020-01-07 15:08:01:767]   File accept Failed, disconnect 
+[2020-01-07 15:08:01:780]   End of algorithm processing 
+[2020-01-07 15:08:02:515]   Camera  connect close! 
+[2020-01-07 15:08:02:515]   --------------------------------------------------------------------! 
+[2020-01-07 15:08:17:561]   Start Server Succeed 
+[2020-01-07 15:08:17:562]   Listen Succeed 
+[2020-01-07 15:08:22:87]   Database connection success ! 
+[2020-01-07 15:08:22:89]   localIP =  127.0.0.1
+[2020-01-07 15:08:22:90]   ReadWorkerParam strQuery =  SELECT  table_station.ToolPara , table_station.DefectDefine, table_station.DefectScreening, table_station.Features,  table_config.NowProName,   				table_config.NowBatchName, table_config.DiskSpaceAlarm, table_config.DiskSpaceDelete ,  table_config.SysOnLine, table_config.SysLang,  				table_config.SaveOKImg, table_config.SaveNGImg, table_config.SaveCompressedOKImg, table_config.SaveCompressedNGImg, table_config.AlgorithmOnOrOff, table_config.SamplingCompressedImg,					table_config.StationDynamic FROM table_station, table_config  WHERE table_config.NowProName = table_station.ProName AND table_station.IP = '127.0.0.1'; 
+[2020-01-07 15:08:22:90]   ReadFeaturePara strLang =  ITO◊¯±Í1#ITO◊¯±Í2#ITOœﬂ≥§∂»#∏ˆ ˝#æ‡¿Î
+[2020-01-07 15:08:22:178]   Camera start connect...  
+[2020-01-07 15:08:35:473]   Send Data #ReadyOK@ 
+[2020-01-07 15:08:35:473]   Camera connect sucess 
+[2020-01-07 15:08:49:302]    Recv data : #1#ITO#1912301341_A_01_0001#123123_120201715849#0@ 
+[2020-01-07 15:08:49:308]   The current mode is 0 and SysOnLine is  0
+[2020-01-07 15:08:55:321]   RecvID size =   1 
+[2020-01-07 15:08:55:321]   ImgMat size =   1 
+[2020-01-07 15:09:05:812]   Ω·π˚ºÏ≤‚…∏—°ø™ º 
+[2020-01-07 15:09:05:812]    ReRecvData.info =  #1#ITO#1912301341_A_01_0001#123123_120201715849#0@
+[2020-01-07 15:09:05:812]    defectInfoNum =  0
+[2020-01-07 15:09:05:812]    defectInfo =  2014,1170
+[2020-01-07 15:09:05:812]    defectInfo =  1787,806
+[2020-01-07 15:09:05:812]    defectInfo =  429.000031
+[2020-01-07 15:09:05:812]    defectInfoNum =  1
+[2020-01-07 15:09:05:812]    defectInfo =  2284,1048
+[2020-01-07 15:09:05:812]    defectInfo =  2133,807
+[2020-01-07 15:09:05:812]    defectInfo =  284.000000
+[2020-01-07 15:09:05:812]    defectInfoNum =  2
+[2020-01-07 15:09:05:812]    defectInfo =  2392,839
+[2020-01-07 15:09:05:812]    defectInfo =  2372,808
+[2020-01-07 15:09:05:812]    defectInfo =  37.000061
+[2020-01-07 15:09:05:812]    defectInfoNum =  3
+[2020-01-07 15:09:05:812]    defectInfo =  2392,889
+[2020-01-07 15:09:05:812]    defectInfo =  2342,808
+[2020-01-07 15:09:05:812]    defectInfo =  95.000046
+[2020-01-07 15:09:05:812]    defectInfoNum =  4
+[2020-01-07 15:09:05:812]    defectInfo =  2392,953
+[2020-01-07 15:09:05:812]    defectInfo =  2301,808
+[2020-01-07 15:09:05:812]    defectInfo =  171.000061
+[2020-01-07 15:09:05:812]    defectInfoNum =  5
+[2020-01-07 15:09:05:812]    defectInfo =  2392,1025
+[2020-01-07 15:09:05:812]    defectInfo =  2257,808
+[2020-01-07 15:09:05:812]    defectInfo =  254.999954
+[2020-01-07 15:09:05:812]    defectInfoNum =  6
+[2020-01-07 15:09:05:812]    defectInfo =  2362,1056
+[2020-01-07 15:09:05:812]    defectInfo =  2207,808
+[2020-01-07 15:09:05:812]    defectInfo =  292.999969
+[2020-01-07 15:09:05:812]    defectInfoNum =  7
+[2020-01-07 15:09:05:812]    defectInfo =  1997,1187
+[2020-01-07 15:09:05:812]    defectInfo =  1760,808
+[2020-01-07 15:09:05:812]    defectInfo =  447.000031
+[2020-01-07 15:09:05:813]    defectInfoNum =  8
+[2020-01-07 15:09:05:813]    defectInfo =  1867,1119
+[2020-01-07 15:09:05:813]    defectInfo =  1673,808
+[2020-01-07 15:09:05:813]    defectInfo =  367.000000
+[2020-01-07 15:09:05:813]    defectInfoNum =  9
+[2020-01-07 15:09:05:813]    defectInfo =  2161,1130
+[2020-01-07 15:09:05:813]    defectInfo =  1961,808
+[2020-01-07 15:09:05:813]    defectInfo =  379.005249
+[2020-01-07 15:09:05:813]    defectInfoNum =  10
+[2020-01-07 15:09:05:813]    defectInfo =  2236,1153
+[2020-01-07 15:09:05:813]    defectInfo =  2021,808
+[2020-01-07 15:09:05:813]    defectInfo =  406.000031
+[2020-01-07 15:09:05:813]    defectInfoNum =  11
+[2020-01-07 15:09:05:813]    defectInfo =  1950,1161
+[2020-01-07 15:09:05:813]    defectInfo =  1729,808
+[2020-01-07 15:09:05:813]    defectInfo =  417.000000
+[2020-01-07 15:09:05:813]    defectInfoNum =  12
+[2020-01-07 15:09:05:813]    defectInfo =  2190,1128
+[2020-01-07 15:09:05:813]    defectInfo =  1990,808
+[2020-01-07 15:09:05:813]    defectInfo =  377.000000
+[2020-01-07 15:09:05:813]    defectInfoNum =  13
+[2020-01-07 15:09:05:813]    defectInfo =  1777,1087
+[2020-01-07 15:09:05:813]    defectInfo =  1603,808
+[2020-01-07 15:09:05:813]    defectInfo =  328.000000
+[2020-01-07 15:09:05:813]    defectInfoNum =  14
+[2020-01-07 15:09:05:813]    defectInfo =  2194,1060
+[2020-01-07 15:09:05:813]    defectInfo =  2037,808
+[2020-01-07 15:09:05:813]    defectInfo =  296.999969
+[2020-01-07 15:09:05:813]    defectInfoNum =  15
+[2020-01-07 15:09:05:813]    defectInfo =  2143,1126
+[2020-01-07 15:09:05:813]    defectInfo =  1944,808
+[2020-01-07 15:09:05:813]    defectInfo =  374.999969
+[2020-01-07 15:09:05:813]    defectInfoNum =  16
+[2020-01-07 15:09:05:813]    defectInfo =  1958,919
+[2020-01-07 15:09:05:813]    defectInfo =  1889,808
+[2020-01-07 15:09:05:813]    defectInfo =  131.000000
+[2020-01-07 15:09:05:813]    defectInfoNum =  17
+[2020-01-07 15:09:05:813]    defectInfo =  2256,1053
+[2020-01-07 15:09:05:813]    defectInfo =  2103,809
+[2020-01-07 15:09:05:813]    defectInfo =  288.000031
+[2020-01-07 15:09:05:813]    defectInfoNum =  18
+[2020-01-07 15:09:05:813]    defectInfo =  2212,1056
+[2020-01-07 15:09:05:813]    defectInfo =  2058,809
+[2020-01-07 15:09:05:813]    defectInfo =  292.000000
+[2020-01-07 15:09:05:813]    defectInfoNum =  19
+[2020-01-07 15:09:05:813]    defectInfo =  2258,956
+[2020-01-07 15:09:05:813]    defectInfo =  2167,810
+[2020-01-07 15:09:05:813]    defectInfo =  172.000015
+[2020-01-07 15:09:05:813]    defectInfoNum =  20
+[2020-01-07 15:09:05:813]    defectInfo =  1698,1026
+[2020-01-07 15:09:05:813]    defectInfo =  1563,810
+[2020-01-07 15:09:05:813]    defectInfo =  254.999985
+[2020-01-07 15:09:05:813]    defectInfoNum =  21
+[2020-01-07 15:09:05:813]    defectInfo =  2039,1133
+[2020-01-07 15:09:05:813]    defectInfo =  1837,810
+[2020-01-07 15:09:05:813]    defectInfo =  381.000031
+[2020-01-07 15:09:05:813]    defectInfoNum =  22
+[2020-01-07 15:09:05:813]    defectInfo =  1981,1083
+[2020-01-07 15:09:05:813]    defectInfo =  1812,812
+[2020-01-07 15:09:05:813]    defectInfo =  318.999969
+[2020-01-07 15:09:05:813]    defectInfoNum =  23
+[2020-01-07 15:09:05:813]    defectInfo =  1660,1009
+[2020-01-07 15:09:05:813]    defectInfo =  1568,860
+[2020-01-07 15:09:05:813]    defectInfo =  175.002869
+[2020-01-07 15:09:05:813]    defectInfoNum =  24
+[2020-01-07 15:09:05:813]    defectInfo =  2102,1152
+[2020-01-07 15:09:05:813]    defectInfo =  1964,930
+[2020-01-07 15:09:05:813]    defectInfo =  262.001953
+[2020-01-07 15:09:05:813]    defectInfoNum =  25
+[2020-01-07 15:09:05:813]    defectInfo =  2385,1160
+[2020-01-07 15:09:05:813]    defectInfo =  2267,970
+[2020-01-07 15:09:05:813]    defectInfo =  222.999985
+[2020-01-07 15:09:05:813]    defectInfoNum =  26
+[2020-01-07 15:09:05:813]    defectInfo =  1885,1365
+[2020-01-07 15:09:05:813]    defectInfo =  1672,1027
+[2020-01-07 15:09:05:813]    defectInfo =  399.005035
+[2020-01-07 15:09:05:813]    defectInfoNum =  27
+[2020-01-07 15:09:05:813]    defectInfo =  1887,1324
+[2020-01-07 15:09:05:813]    defectInfo =  1723,1065
+[2020-01-07 15:09:05:813]    defectInfo =  306.006561
+[2020-01-07 15:09:05:813]    defectInfoNum =  28
+[2020-01-07 15:09:05:813]    defectInfo =  2392,1104
+[2020-01-07 15:09:05:813]    defectInfo =  2368,1066
+[2020-01-07 15:09:05:813]    defectInfo =  43.999966
+[2020-01-07 15:09:05:813]    defectInfoNum =  29
+[2020-01-07 15:09:05:813]    defectInfo =  2337,1129
+[2020-01-07 15:09:05:813]    defectInfo =  2297,1069
+[2020-01-07 15:09:05:813]    defectInfo =  72.027763
+[2020-01-07 15:09:05:813]    defectInfoNum =  30
+[2020-01-07 15:09:05:813]    defectInfo =  2232,1124
+[2020-01-07 15:09:05:813]    defectInfo =  2200,1069
+[2020-01-07 15:09:05:813]    defectInfo =  64.031250
+[2020-01-07 15:09:05:813]    defectInfoNum =  31
+[2020-01-07 15:09:05:813]    defectInfo =  2259,1130
+[2020-01-07 15:09:05:813]    defectInfo =  2220,1069
+[2020-01-07 15:09:05:813]    defectInfo =  72.000008
+[2020-01-07 15:09:05:813]    defectInfoNum =  32
+[2020-01-07 15:09:05:813]    defectInfo =  2306,1127
+[2020-01-07 15:09:05:813]    defectInfo =  2266,1069
+[2020-01-07 15:09:05:813]    defectInfo =  71.063286
+[2020-01-07 15:09:05:813]    defectInfoNum =  33
+[2020-01-07 15:09:05:813]    defectInfo =  1921,1318
+[2020-01-07 15:09:05:813]    defectInfo =  1784,1097
+[2020-01-07 15:09:05:813]    defectInfo =  260.001923
+[2020-01-07 15:09:05:813]    defectInfoNum =  34
+[2020-01-07 15:09:05:813]    defectInfo =  2351,1150
+[2020-01-07 15:09:05:813]    defectInfo =  2342,1137
+[2020-01-07 15:09:05:813]    defectInfo =  16.031244
+[2020-01-07 15:09:05:813]    defectInfoNum =  35
+[2020-01-07 15:09:05:813]    defectInfo =  2251,1154
+[2020-01-07 15:09:05:813]    defectInfo =  2239,1137
+[2020-01-07 15:09:05:813]    defectInfo =  20.025003
+[2020-01-07 15:09:05:813]    defectInfoNum =  36
+[2020-01-07 15:09:05:813]    defectInfo =  2210,1160
+[2020-01-07 15:09:05:813]    defectInfo =  2196,1138
+[2020-01-07 15:09:05:813]    defectInfo =  27.000029
+[2020-01-07 15:09:05:813]    defectInfoNum =  37
+[2020-01-07 15:09:05:813]    defectInfo =  2215,1217
+[2020-01-07 15:09:05:813]    defectInfo =  2166,1139
+[2020-01-07 15:09:05:813]    defectInfo =  92.000008
+[2020-01-07 15:09:05:813]    defectInfoNum =  38
+[2020-01-07 15:09:05:813]    defectInfo =  2352,1201
+[2020-01-07 15:09:05:813]    defectInfo =  2314,1139
+[2020-01-07 15:09:05:813]    defectInfo =  72.999969
+[2020-01-07 15:09:05:813]    defectInfoNum =  39
+[2020-01-07 15:09:05:813]    defectInfo =  2273,1153
+[2020-01-07 15:09:05:813]    defectInfo =  2264,1140
+[2020-01-07 15:09:05:813]    defectInfo =  15.999938
+[2020-01-07 15:09:05:813]    defectInfoNum =  40
+[2020-01-07 15:09:05:813]    defectInfo =  2066,1199
+[2020-01-07 15:09:05:813]    defectInfo =  2034,1147
+[2020-01-07 15:09:05:813]    defectInfo =  61.008163
+[2020-01-07 15:09:05:813]    defectInfoNum =  41
+[2020-01-07 15:09:05:813]    defectInfo =  1967,1276
+[2020-01-07 15:09:05:813]    defectInfo =  1888,1153
+[2020-01-07 15:09:05:813]    defectInfo =  146.013718
+[2020-01-07 15:09:05:813]    defectInfoNum =  42
+[2020-01-07 15:09:05:813]    defectInfo =  2290,1181
+[2020-01-07 15:09:05:813]    defectInfo =  2279,1163
+[2020-01-07 15:09:05:813]    defectInfo =  21.000004
+[2020-01-07 15:09:05:813]    defectInfoNum =  43
+[2020-01-07 15:09:05:813]    defectInfo =  2379,1195
+[2020-01-07 15:09:05:813]    defectInfo =  2363,1169
+[2020-01-07 15:09:05:813]    defectInfo =  30.999969
+[2020-01-07 15:09:05:813]    defectInfoNum =  44
+[2020-01-07 15:09:05:813]    defectInfo =  2277,1193
+[2020-01-07 15:09:05:813]    defectInfo =  2270,1181
+[2020-01-07 15:09:05:813]    defectInfo =  13.999943
+[2020-01-07 15:09:05:813]    defectInfoNum =  45
+[2020-01-07 15:09:05:813]    defectInfo =  2108,1243
+[2020-01-07 15:09:05:813]    defectInfo =  2068,1181
+[2020-01-07 15:09:05:813]    defectInfo =  74.006744
+[2020-01-07 15:09:05:813]    defectInfoNum =  46
+[2020-01-07 15:09:05:813]    defectInfo =  2265,1198
+[2020-01-07 15:09:05:813]    defectInfo =  2257,1187
+[2020-01-07 15:09:05:813]    defectInfo =  14.000008
+[2020-01-07 15:09:05:813]    defectInfoNum =  47
+[2020-01-07 15:09:05:813]    defectInfo =  1973,1199
+[2020-01-07 15:09:05:813]    defectInfo =  1966,1189
+[2020-01-07 15:09:05:813]    defectInfo =  12.041574
+[2020-01-07 15:09:05:813]    defectInfoNum =  48
+[2020-01-07 15:09:05:813]    defectInfo =  2301,1199
+[2020-01-07 15:09:05:813]    defectInfo =  2298,1193
+[2020-01-07 15:09:05:813]    defectInfo =  6.999997
+[2020-01-07 15:09:05:813]    defectInfoNum =  49
+[2020-01-07 15:09:05:813]    defectInfo =  2395,1221
+[2020-01-07 15:09:05:813]    defectInfo =  2385,1204
+[2020-01-07 15:09:05:813]    defectInfo =  19.000010
+[2020-01-07 15:09:05:813]    defectInfoNum =  50
+[2020-01-07 15:09:05:813]    defectInfo =  2296,1248
+[2020-01-07 15:09:05:813]    defectInfo =  2272,1211
+[2020-01-07 15:09:05:813]    defectInfo =  44.000057
+[2020-01-07 15:09:05:813]    defectInfoNum =  51
+[2020-01-07 15:09:05:813]    defectInfo =  1992,1226
+[2020-01-07 15:09:05:813]    defectInfo =  1986,1217
+[2020-01-07 15:09:05:813]    defectInfo =  11.000040
+[2020-01-07 15:09:05:813]    defectInfoNum =  52
+[2020-01-07 15:09:05:813]    defectInfo =  2216,1243
+[2020-01-07 15:09:05:813]    defectInfo =  2200,1218
+[2020-01-07 15:09:05:813]    defectInfo =  30.000050
+[2020-01-07 15:09:05:813]    defectInfoNum =  53
+[2020-01-07 15:09:05:813]    defectInfo =  2321,1261
+[2020-01-07 15:09:05:814]    defectInfo =  2302,1233
+[2020-01-07 15:09:05:814]    defectInfo =  34.014645
+[2020-01-07 15:09:05:814]    defectInfoNum =  54
+[2020-01-07 15:09:05:814]    defectInfo =  2274,1263
+[2020-01-07 15:09:05:814]    defectInfo =  2255,1235
+[2020-01-07 15:09:05:814]    defectInfo =  34.014713
+[2020-01-07 15:09:05:814]    defectInfoNum =  55
+[2020-01-07 15:09:05:814]    defectInfo =  2067,1252
+[2020-01-07 15:09:05:814]    defectInfo =  2055,1235
+[2020-01-07 15:09:05:814]    defectInfo =  21.023817
+[2020-01-07 15:09:05:814]    defectInfoNum =  56
+[2020-01-07 15:09:05:814]    defectInfo =  2036,1250
+[2020-01-07 15:09:05:814]    defectInfo =  2028,1237
+[2020-01-07 15:09:05:814]    defectInfo =  15.999990
+[2020-01-07 15:09:05:814]    defectInfoNum =  57
+[2020-01-07 15:09:05:814]    defectInfo =  2025,1279
+[2020-01-07 15:09:05:814]    defectInfo =  2007,1250
+[2020-01-07 15:09:05:814]    defectInfo =  33.999958
+[2020-01-07 15:09:05:814]    defectInfoNum =  58
+[2020-01-07 15:09:05:814]    defectInfo =  2234,1272
+[2020-01-07 15:09:05:814]    defectInfo =  2222,1252
+[2020-01-07 15:09:05:814]    defectInfo =  22.999937
+[2020-01-07 15:09:05:814]    defectInfoNum =  59
+[2020-01-07 15:09:05:814]    defectInfo =  2331,1305
+[2020-01-07 15:09:05:814]    defectInfo =  2303,1260
+[2020-01-07 15:09:05:814]    defectInfo =  53.000050
+[2020-01-07 15:09:05:814]    defectInfoNum =  60
+[2020-01-07 15:09:05:814]    defectInfo =  2097,1300
+[2020-01-07 15:09:05:814]    defectInfo =  2073,1262
+[2020-01-07 15:09:05:814]    defectInfo =  44.999996
+[2020-01-07 15:09:05:814]    defectInfoNum =  61
+[2020-01-07 15:09:05:814]    defectInfo =  2362,1296
+[2020-01-07 15:09:05:814]    defectInfo =  2359,1291
+[2020-01-07 15:09:05:814]    defectInfo =  6.000038
+[2020-01-07 15:09:05:814]    defectInfoNum =  62
+[2020-01-07 15:09:05:814]    defectInfo =  2305,1312
+[2020-01-07 15:09:05:814]    defectInfo =  2293,1293
+[2020-01-07 15:09:05:814]    defectInfo =  23.000051
+[2020-01-07 15:09:05:814]    defectInfoNum =  63
+[2020-01-07 15:09:05:814]    defectInfo =  2054,1326
+[2020-01-07 15:09:05:814]    defectInfo =  2050,1319
+[2020-01-07 15:09:05:814]    defectInfo =  8.999992
+[2020-01-07 15:09:05:814]    defectInfoNum =  64
+[2020-01-07 15:09:05:814]    defectInfo =  1917,1373
+[2020-01-07 15:09:05:814]    defectInfo =  1894,1336
+[2020-01-07 15:09:05:814]    defectInfo =  44.000027
+[2020-01-07 15:09:05:814]    defectInfoNum =  65
+[2020-01-07 15:09:05:814]    defectInfo =  1907,1397
+[2020-01-07 15:09:05:814]    defectInfo =  1892,1374
+[2020-01-07 15:09:05:814]    defectInfo =  27.018541
+[2020-01-07 15:09:05:814]    defectInfoNum =  66
+[2020-01-07 15:09:05:814]    defectInfo =  2054,1421
+[2020-01-07 15:09:05:814]    defectInfo =  2044,1404
+[2020-01-07 15:09:05:814]    defectInfo =  20.000032
+[2020-01-07 15:09:05:814]    defectInfoNum =  67
+[2020-01-07 15:09:05:814]    defectInfo =  2255,1478
+[2020-01-07 15:09:05:814]    defectInfo =  2218,1418
+[2020-01-07 15:09:05:814]    defectInfo =  70.000015
+[2020-01-07 15:09:05:814]    defectInfoNum =  68
+[2020-01-07 15:09:05:814]    defectInfo =  2072,1449
+[2020-01-07 15:09:05:814]    defectInfo =  2061,1431
+[2020-01-07 15:09:05:814]    defectInfo =  21.999945
+[2020-01-07 15:09:05:814]    defectInfoNum =  69
+[2020-01-07 15:09:05:814]    defectInfo =  2217,1447
+[2020-01-07 15:09:05:814]    defectInfo =  2211,1438
+[2020-01-07 15:09:05:814]    defectInfo =  10.999989
+[2020-01-07 15:09:05:814]    defectInfoNum =  70
+[2020-01-07 15:09:05:814]    defectInfo =  2254,1554
+[2020-01-07 15:09:05:814]    defectInfo =  2180,1440
+[2020-01-07 15:09:05:814]    defectInfo =  136.033081
+[2020-01-07 15:09:05:814]    defectInfoNum =  71
+[2020-01-07 15:09:05:814]    defectInfo =  2022,1481
+[2020-01-07 15:09:05:814]    defectInfo =  2002,1448
+[2020-01-07 15:09:05:814]    defectInfo =  37.999969
+[2020-01-07 15:09:05:814]    defectInfoNum =  72
+[2020-01-07 15:09:05:814]    defectInfo =  2358,1477
+[2020-01-07 15:09:05:814]    defectInfo =  2341,1450
+[2020-01-07 15:09:05:814]    defectInfo =  31.999992
+[2020-01-07 15:09:05:814]    defectInfoNum =  73
+[2020-01-07 15:09:05:814]    defectInfo =  2255,1508
+[2020-01-07 15:09:05:814]    defectInfo =  2223,1456
+[2020-01-07 15:09:05:814]    defectInfo =  62.000042
+[2020-01-07 15:09:05:814]    defectInfoNum =  74
+[2020-01-07 15:09:05:814]    defectInfo =  2195,1502
+[2020-01-07 15:09:05:814]    defectInfo =  2177,1478
+[2020-01-07 15:09:05:814]    defectInfo =  29.068911
+[2020-01-07 15:09:05:814]    defectInfoNum =  75
+[2020-01-07 15:09:05:814]    defectInfo =  2315,1493
+[2020-01-07 15:09:05:814]    defectInfo =  2311,1486
+[2020-01-07 15:09:05:814]    defectInfo =  8.000021
+[2020-01-07 15:09:05:814]    defectInfoNum =  76
+[2020-01-07 15:09:05:814]    defectInfo =  2004,1511
+[2020-01-07 15:09:05:814]    defectInfo =  1990,1488
+[2020-01-07 15:09:05:814]    defectInfo =  27.000029
+[2020-01-07 15:09:05:814]    defectInfoNum =  77
+[2020-01-07 15:09:05:814]    defectInfo =  2369,1498
+[2020-01-07 15:09:05:814]    defectInfo =  2364,1489
+[2020-01-07 15:09:05:814]    defectInfo =  11.045321
+[2020-01-07 15:09:05:814]    defectInfoNum =  78
+[2020-01-07 15:09:05:814]    defectInfo =  1979,1518
+[2020-01-07 15:09:05:814]    defectInfo =  1966,1497
+[2020-01-07 15:09:05:814]    defectInfo =  25.019955
+[2020-01-07 15:09:05:814]    defectInfoNum =  79
+[2020-01-07 15:09:05:814]    defectInfo =  2387,1528
+[2020-01-07 15:09:05:814]    defectInfo =  2375,1508
+[2020-01-07 15:09:05:814]    defectInfo =  23.021811
+[2020-01-07 15:09:05:814]    defectInfoNum =  80
+[2020-01-07 15:09:05:814]    defectInfo =  2027,1544
+[2020-01-07 15:09:05:814]    defectInfo =  2011,1519
+[2020-01-07 15:09:05:814]    defectInfo =  29.000025
+[2020-01-07 15:09:05:814]    defectInfoNum =  81
+[2020-01-07 15:09:05:814]    defectInfo =  2281,1550
+[2020-01-07 15:09:05:814]    defectInfo =  2267,1526
+[2020-01-07 15:09:05:814]    defectInfo =  28.000002
+[2020-01-07 15:09:05:814]    defectInfoNum =  82
+[2020-01-07 15:09:05:814]    defectInfo =  2231,1559
+[2020-01-07 15:09:05:814]    defectInfo =  2225,1549
+[2020-01-07 15:09:05:814]    defectInfo =  12.000012
+[2020-01-07 15:09:05:814]    defectInfoNum =  83
+[2020-01-07 15:09:05:814]    defectInfo =  2373,1585
+[2020-01-07 15:09:05:814]    defectInfo =  2352,1551
+[2020-01-07 15:09:05:814]    defectInfo =  39.999962
+[2020-01-07 15:09:05:814]    defectInfoNum =  84
+[2020-01-07 15:09:05:814]    defectInfo =  2210,1578
+[2020-01-07 15:09:05:814]    defectInfo =  2197,1557
+[2020-01-07 15:09:05:814]    defectInfo =  24.999983
+[2020-01-07 15:09:05:814]    defectInfoNum =  85
+[2020-01-07 15:09:05:814]    defectInfo =  2070,1611
+[2020-01-07 15:09:05:814]    defectInfo =  2036,1559
+[2020-01-07 15:09:05:814]    defectInfo =  62.008076
+[2020-01-07 15:09:05:814]    defectInfoNum =  86
+[2020-01-07 15:09:05:814]    defectInfo =  2294,1661
+[2020-01-07 15:09:05:814]    defectInfo =  2239,1571
+[2020-01-07 15:09:05:814]    defectInfo =  105.004807
+[2020-01-07 15:09:05:814]    defectInfoNum =  87
+[2020-01-07 15:09:05:814]    defectInfo =  2317,1654
+[2020-01-07 15:09:05:814]    defectInfo =  2268,1576
+[2020-01-07 15:09:05:814]    defectInfo =  91.999992
+[2020-01-07 15:09:05:814]    defectInfoNum =  88
+[2020-01-07 15:09:05:814]    defectInfo =  2312,1598
+[2020-01-07 15:09:05:814]    defectInfo =  2300,1580
+[2020-01-07 15:09:05:814]    defectInfo =  22.000029
+[2020-01-07 15:09:05:814]    defectInfoNum =  89
+[2020-01-07 15:09:05:814]    defectInfo =  2069,1669
+[2020-01-07 15:09:05:814]    defectInfo =  2021,1591
+[2020-01-07 15:09:05:814]    defectInfo =  92.000008
+[2020-01-07 15:09:05:814]    defectInfoNum =  90
+[2020-01-07 15:09:05:814]    defectInfo =  2352,1629
+[2020-01-07 15:09:05:814]    defectInfo =  2334,1600
+[2020-01-07 15:09:05:814]    defectInfo =  34.000042
+[2020-01-07 15:09:05:814]    defectInfoNum =  91
+[2020-01-07 15:09:05:814]    defectInfo =  2392,1614
+[2020-01-07 15:09:05:814]    defectInfo =  2382,1600
+[2020-01-07 15:09:05:814]    defectInfo =  17.029385
+[2020-01-07 15:09:05:814]    defectInfoNum =  92
+[2020-01-07 15:09:05:814]    defectInfo =  2369,1691
+[2020-01-07 15:09:05:814]    defectInfo =  2325,1619
+[2020-01-07 15:09:05:814]    defectInfo =  84.000061
+[2020-01-07 15:09:05:814]    defectInfoNum =  93
+[2020-01-07 15:09:05:814]    defectInfo =  2205,1658
+[2020-01-07 15:09:05:814]    defectInfo =  2191,1634
+[2020-01-07 15:09:05:814]    defectInfo =  27.018492
+[2020-01-07 15:09:05:814]    defectInfoNum =  94
+[2020-01-07 15:09:05:814]    defectInfo =  2256,1651
+[2020-01-07 15:09:05:814]    defectInfo =  2247,1637
+[2020-01-07 15:09:05:814]    defectInfo =  16.000002
+[2020-01-07 15:09:05:814]    defectInfoNum =  95
+[2020-01-07 15:09:05:814]    defectInfo =  2372,1662
+[2020-01-07 15:09:05:814]    defectInfo =  2367,1653
+[2020-01-07 15:09:05:814]    defectInfo =  10.000069
+[2020-01-07 15:09:05:814]    defectInfoNum =  96
+[2020-01-07 15:09:05:814]    defectInfo =  2288,1790
+[2020-01-07 15:09:05:814]    defectInfo =  2219,1681
+[2020-01-07 15:09:05:814]    defectInfo =  128.999985
+[2020-01-07 15:09:05:814]    defectInfoNum =  97
+[2020-01-07 15:09:05:814]    defectInfo =  2315,1748
+[2020-01-07 15:09:05:814]    defectInfo =  2276,1682
+[2020-01-07 15:09:05:814]    defectInfo =  77.006531
+[2020-01-07 15:09:05:814]    defectInfoNum =  98
+[2020-01-07 15:09:05:814]    defectInfo =  2346,1743
+[2020-01-07 15:09:05:814]    defectInfo =  2331,1720
+[2020-01-07 15:09:05:814]    defectInfo =  27.000082
+[2020-01-07 15:09:05:814]    defectInfoNum =  99
+[2020-01-07 15:09:05:814]    defectInfo =  2180,1788
+[2020-01-07 15:09:05:814]    defectInfo =  2169,1771
+[2020-01-07 15:09:05:814]    defectInfo =  20.000032
+[2020-01-07 15:09:05:823]    NG Small Img Num = 0
+[2020-01-07 15:09:05:823]    current Img ProductID = êgå
+[2020-01-07 15:09:05:823]    NG Small Img Num = 1
+[2020-01-07 15:09:05:823]    current Img ProductID = êgå
+[2020-01-07 15:09:05:823]    NG Small Img Num = 2
+[2020-01-07 15:09:05:823]    current Img ProductID = êgå
+[2020-01-07 15:09:05:823]    NG Small Img Num = 3
+[2020-01-07 15:09:05:823]    current Img ProductID = êgå
+[2020-01-07 15:09:05:823]    NG Small Img Num = 4
+[2020-01-07 15:09:05:823]    current Img ProductID = êgå
+[2020-01-07 15:09:05:824]    NG Small Img Num = 5
+[2020-01-07 15:09:05:824]    current Img ProductID = êgå
+[2020-01-07 15:09:05:824]    NG Small Img Num = 6
+[2020-01-07 15:09:05:824]    current Img ProductID = êgå
+[2020-01-07 15:09:05:824]    NG Small Img Num = 7
+[2020-01-07 15:09:05:824]    current Img ProductID = êgå
+[2020-01-07 15:09:05:824]    NG Small Img Num = 8
+[2020-01-07 15:09:05:824]    current Img ProductID = êgå
+[2020-01-07 15:09:05:824]    NG Small Img Num = 9
+[2020-01-07 15:09:05:824]    current Img ProductID = êgå
+[2020-01-07 15:09:05:824]    NG Small Img Num = 10
+[2020-01-07 15:09:05:824]    current Img ProductID = êgå
+[2020-01-07 15:09:05:824]    NG Small Img Num = 11
+[2020-01-07 15:09:05:824]    current Img ProductID = êgå
+[2020-01-07 15:09:05:825]    NG Small Img Num = 12
+[2020-01-07 15:09:05:825]    current Img ProductID = êgå
+[2020-01-07 15:09:05:825]    NG Small Img Num = 13
+[2020-01-07 15:09:05:825]    current Img ProductID = êgå
+[2020-01-07 15:09:05:825]    NG Small Img Num = 14
+[2020-01-07 15:09:05:825]    current Img ProductID = êgå
+[2020-01-07 15:09:05:825]    NG Small Img Num = 15
+[2020-01-07 15:09:05:825]    current Img ProductID = êgå
+[2020-01-07 15:09:05:825]    NG Small Img Num = 16
+[2020-01-07 15:09:05:825]    current Img ProductID = êgå
+[2020-01-07 15:09:05:825]    NG Small Img Num = 17
+[2020-01-07 15:09:05:825]    current Img ProductID = êgå
+[2020-01-07 15:09:05:825]    NG Small Img Num = 18
+[2020-01-07 15:09:05:825]    current Img ProductID = êgå
+[2020-01-07 15:09:05:825]    NG Small Img Num = 19
+[2020-01-07 15:09:05:825]    current Img ProductID = êgå
+[2020-01-07 15:09:05:826]    NG Small Img Num = 20
+[2020-01-07 15:09:05:826]    current Img ProductID = êgå
+[2020-01-07 15:09:05:826]    NG Small Img Num = 21
+[2020-01-07 15:09:05:826]    current Img ProductID = êgå
+[2020-01-07 15:09:05:826]    NG Small Img Num = 22
+[2020-01-07 15:09:05:826]    current Img ProductID = êgå
+[2020-01-07 15:09:05:826]    NG Small Img Num = 23
+[2020-01-07 15:09:05:826]    current Img ProductID = êgå
+[2020-01-07 15:09:05:826]    NG Small Img Num = 24
+[2020-01-07 15:09:05:826]    current Img ProductID = êgå
+[2020-01-07 15:09:05:826]    NG Small Img Num = 25
+[2020-01-07 15:09:05:826]    current Img ProductID = êgå
+[2020-01-07 15:09:05:826]    NG Small Img Num = 26
+[2020-01-07 15:09:05:826]    current Img ProductID = êgå
+[2020-01-07 15:09:05:826]    NG Small Img Num = 27
+[2020-01-07 15:09:05:826]    current Img ProductID = êgå
+[2020-01-07 15:09:05:826]    NG Small Img Num = 28
+[2020-01-07 15:09:05:826]    current Img ProductID = êgå
+[2020-01-07 15:09:05:827]    NG Small Img Num = 29
+[2020-01-07 15:09:05:827]    current Img ProductID = êgå
+[2020-01-07 15:09:05:827]    NG Small Img Num = 30
+[2020-01-07 15:09:05:827]    current Img ProductID = êgå
+[2020-01-07 15:09:05:827]    NG Small Img Num = 31
+[2020-01-07 15:09:05:827]    current Img ProductID = êgå
+[2020-01-07 15:09:05:827]    NG Small Img Num = 32
+[2020-01-07 15:09:05:827]    current Img ProductID = êgå
+[2020-01-07 15:09:05:827]    NG Small Img Num = 33
+[2020-01-07 15:09:05:827]    current Img ProductID = êgå
+[2020-01-07 15:09:05:827]    NG Small Img Num = 34
+[2020-01-07 15:09:05:827]    current Img ProductID = êgå
+[2020-01-07 15:09:05:827]    NG Small Img Num = 35
+[2020-01-07 15:09:05:827]    current Img ProductID = êgå
+[2020-01-07 15:09:05:827]    NG Small Img Num = 36
+[2020-01-07 15:09:05:827]    current Img ProductID = êgå
+[2020-01-07 15:09:05:828]    NG Small Img Num = 37
+[2020-01-07 15:09:05:828]    current Img ProductID = êgå
+[2020-01-07 15:09:05:828]    NG Small Img Num = 38
+[2020-01-07 15:09:05:828]    current Img ProductID = êgå
+[2020-01-07 15:09:05:828]    NG Small Img Num = 39
+[2020-01-07 15:09:05:828]    current Img ProductID = êgå
+[2020-01-07 15:09:05:828]    NG Small Img Num = 40
+[2020-01-07 15:09:05:828]    current Img ProductID = êgå
+[2020-01-07 15:09:05:828]    NG Small Img Num = 41
+[2020-01-07 15:09:05:828]    current Img ProductID = êgå
+[2020-01-07 15:09:05:828]    NG Small Img Num = 42
+[2020-01-07 15:09:05:828]    current Img ProductID = êgå
+[2020-01-07 15:09:05:829]    NG Small Img Num = 43
+[2020-01-07 15:09:05:829]    current Img ProductID = êgå
+[2020-01-07 15:09:05:829]    NG Small Img Num = 44
+[2020-01-07 15:09:05:829]    current Img ProductID = êgå
+[2020-01-07 15:09:05:829]    NG Small Img Num = 45
+[2020-01-07 15:09:05:829]    current Img ProductID = êgå
+[2020-01-07 15:09:05:829]    NG Small Img Num = 46
+[2020-01-07 15:09:05:829]    current Img ProductID = êgå
+[2020-01-07 15:09:05:829]    NG Small Img Num = 47
+[2020-01-07 15:09:05:829]    current Img ProductID = êgå
+[2020-01-07 15:09:05:829]    NG Small Img Num = 48
+[2020-01-07 15:09:05:829]    current Img ProductID = êgå
+[2020-01-07 15:09:05:830]    NG Small Img Num = 49
+[2020-01-07 15:09:05:830]    current Img ProductID = êgå
+[2020-01-07 15:09:05:830]    NG Small Img Num = 50
+[2020-01-07 15:09:05:830]    current Img ProductID = êgå
+[2020-01-07 15:09:05:830]    NG Small Img Num = 51
+[2020-01-07 15:09:05:830]    current Img ProductID = êgå
+[2020-01-07 15:09:05:830]    NG Small Img Num = 52
+[2020-01-07 15:09:05:830]    current Img ProductID = êgå
+[2020-01-07 15:09:05:830]    NG Small Img Num = 53
+[2020-01-07 15:09:05:830]    current Img ProductID = êgå
+[2020-01-07 15:09:05:830]    NG Small Img Num = 54
+[2020-01-07 15:09:05:830]    current Img ProductID = êgå
+[2020-01-07 15:09:05:831]    NG Small Img Num = 55
+[2020-01-07 15:09:05:831]    current Img ProductID = êgå
+[2020-01-07 15:09:05:831]    NG Small Img Num = 56
+[2020-01-07 15:09:05:831]    current Img ProductID = êgå
+[2020-01-07 15:09:05:831]    NG Small Img Num = 57
+[2020-01-07 15:09:05:831]    current Img ProductID = êgå
+[2020-01-07 15:09:05:831]    NG Small Img Num = 58
+[2020-01-07 15:09:05:831]    current Img ProductID = êgå
+[2020-01-07 15:09:05:831]    NG Small Img Num = 59
+[2020-01-07 15:09:05:831]    current Img ProductID = êgå
+[2020-01-07 15:09:05:831]    NG Small Img Num = 60
+[2020-01-07 15:09:05:831]    current Img ProductID = êgå
+[2020-01-07 15:09:05:832]    NG Small Img Num = 61
+[2020-01-07 15:09:05:832]    current Img ProductID = êgå
+[2020-01-07 15:09:05:832]    NG Small Img Num = 62
+[2020-01-07 15:09:05:832]    current Img ProductID = êgå
+[2020-01-07 15:09:05:832]    NG Small Img Num = 63
+[2020-01-07 15:09:05:832]    current Img ProductID = êgå
+[2020-01-07 15:09:05:832]    NG Small Img Num = 64
+[2020-01-07 15:09:05:832]    current Img ProductID = êgå
+[2020-01-07 15:09:05:832]    NG Small Img Num = 65
+[2020-01-07 15:09:05:832]    current Img ProductID = êgå
+[2020-01-07 15:09:05:832]    NG Small Img Num = 66
+[2020-01-07 15:09:05:832]    current Img ProductID = êgå
+[2020-01-07 15:09:05:832]    NG Small Img Num = 67
+[2020-01-07 15:09:05:832]    current Img ProductID = êgå
+[2020-01-07 15:09:05:832]    NG Small Img Num = 68
+[2020-01-07 15:09:05:832]    current Img ProductID = êgå
+[2020-01-07 15:09:05:832]    NG Small Img Num = 69
+[2020-01-07 15:09:05:832]    current Img ProductID = êgå
+[2020-01-07 15:09:05:833]    NG Small Img Num = 70
+[2020-01-07 15:09:05:833]    current Img ProductID = êgå
+[2020-01-07 15:09:05:833]    NG Small Img Num = 71
+[2020-01-07 15:09:05:833]    current Img ProductID = êgå
+[2020-01-07 15:09:05:833]    NG Small Img Num = 72
+[2020-01-07 15:09:05:833]    current Img ProductID = êgå
+[2020-01-07 15:09:05:833]    NG Small Img Num = 73
+[2020-01-07 15:09:05:833]    current Img ProductID = êgå
+[2020-01-07 15:09:05:833]    NG Small Img Num = 74
+[2020-01-07 15:09:05:833]    current Img ProductID = êgå
+[2020-01-07 15:09:05:833]    NG Small Img Num = 75
+[2020-01-07 15:09:05:833]    current Img ProductID = êgå
+[2020-01-07 15:09:05:833]    NG Small Img Num = 76
+[2020-01-07 15:09:05:833]    current Img ProductID = êgå
+[2020-01-07 15:09:05:833]    NG Small Img Num = 77
+[2020-01-07 15:09:05:833]    current Img ProductID = êgå
+[2020-01-07 15:09:05:833]    NG Small Img Num = 78
+[2020-01-07 15:09:05:833]    current Img ProductID = êgå
+[2020-01-07 15:09:05:833]    NG Small Img Num = 79
+[2020-01-07 15:09:05:833]    current Img ProductID = êgå
+[2020-01-07 15:09:05:834]    NG Small Img Num = 80
+[2020-01-07 15:09:05:834]    current Img ProductID = êgå
+[2020-01-07 15:09:05:834]    NG Small Img Num = 81
+[2020-01-07 15:09:05:834]    current Img ProductID = êgå
+[2020-01-07 15:09:05:834]    NG Small Img Num = 82
+[2020-01-07 15:09:05:834]    current Img ProductID = êgå
+[2020-01-07 15:09:05:834]    NG Small Img Num = 83
+[2020-01-07 15:09:05:834]    current Img ProductID = êgå
+[2020-01-07 15:09:05:834]    NG Small Img Num = 84
+[2020-01-07 15:09:05:834]    current Img ProductID = êgå
+[2020-01-07 15:09:05:834]    NG Small Img Num = 85
+[2020-01-07 15:09:05:834]    current Img ProductID = êgå
+[2020-01-07 15:09:05:834]    NG Small Img Num = 86
+[2020-01-07 15:09:05:834]    current Img ProductID = êgå
+[2020-01-07 15:09:05:834]    NG Small Img Num = 87
+[2020-01-07 15:09:05:834]    current Img ProductID = êgå
+[2020-01-07 15:09:05:834]    NG Small Img Num = 88
+[2020-01-07 15:09:05:834]    current Img ProductID = êgå
+[2020-01-07 15:09:05:834]    NG Small Img Num = 89
+[2020-01-07 15:09:05:834]    current Img ProductID = êgå
+[2020-01-07 15:09:05:834]    NG Small Img Num = 90
+[2020-01-07 15:09:05:834]    current Img ProductID = êgå
+[2020-01-07 15:09:05:834]    NG Small Img Num = 91
+[2020-01-07 15:09:05:834]    current Img ProductID = êgå
+[2020-01-07 15:09:05:834]    NG Small Img Num = 92
+[2020-01-07 15:09:05:834]    current Img ProductID = êgå
+[2020-01-07 15:09:05:835]    NG Small Img Num = 93
+[2020-01-07 15:09:05:835]    current Img ProductID = êgå
+[2020-01-07 15:09:05:835]    NG Small Img Num = 94
+[2020-01-07 15:09:05:835]    current Img ProductID = êgå
+[2020-01-07 15:09:05:835]    NG Small Img Num = 95
+[2020-01-07 15:09:05:835]    current Img ProductID = êgå
+[2020-01-07 15:09:05:835]    NG Small Img Num = 96
+[2020-01-07 15:09:05:835]    current Img ProductID = êgå
+[2020-01-07 15:09:05:835]    NG Small Img Num = 97
+[2020-01-07 15:09:05:835]    current Img ProductID = êgå
+[2020-01-07 15:09:05:835]    NG Small Img Num = 98
+[2020-01-07 15:09:05:835]    current Img ProductID = êgå
+[2020-01-07 15:09:05:835]    NG Small Img Num = 99
+[2020-01-07 15:09:05:835]    current Img ProductID = êgå
+[2020-01-07 15:09:05:845]   Ω·π˚ºÏ≤‚…∏—°Ω· ¯ 
+[2020-01-07 15:09:05:848]    bmp_new_name =  D:\Image\ITO\1912301341_A_01_0001\OriginalNG\123123_120201715849_NG.bmp
+[2020-01-07 15:09:05:851]   ø™ º±£¥ÊNG-bmp‘≠Õº 
+[2020-01-07 15:09:06:127]   ±£¥ÊNG-bmp‘≠ÕºΩ· ¯ 
+[2020-01-07 15:09:06:623]   ø™ º±£¥Êjpg—πÀıÕº 
+[2020-01-07 15:09:08:587]   Ω· ¯±£¥Êjpg—πÀıÕº 
+[2020-01-07 15:09:08:590]   Sending message data : #123123_120201715849#100#0#1@ 
+[2020-01-07 15:09:08:592]   ..........next ...... 
+[2020-01-07 15:12:45:381]   Start Server Succeed 
+[2020-01-07 15:12:45:382]   Listen Succeed 
+[2020-01-07 15:13:50:585]   Start Server Succeed 
+[2020-01-07 15:13:50:587]   Listen Succeed 
