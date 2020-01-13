@@ -1,0 +1,81 @@
+﻿  Server.cpp
+c:\program files\nvidia gpu computing toolkit\cuda\v9.2\include\crt/device_functions.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\program files\nvidia gpu computing toolkit\cuda\v9.2\include\crt/device_functions.h(776): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\program files\nvidia gpu computing toolkit\cuda\v9.2\include\crt/device_functions.h(1636): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\program files\nvidia gpu computing toolkit\cuda\v9.2\include\crt\device_double_functions.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\program files\nvidia gpu computing toolkit\cuda\v9.2\include\sm_20_intrinsics.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\program files\nvidia gpu computing toolkit\cuda\v9.2\include\sm_20_intrinsics.h(925): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+F:\Program\CfhsImgPro\Include\Algorithm\Func.h(124): warning C4251: “defect_sample_info::defect_sample_big_rect”: class“cv::Rect_<int>”需要有 dll 接口由 struct“defect_sample_info”的客户端使用
+  D:\opencv-4.0.1_without_gpu\include\opencv2/core/types.hpp(459): note: 参见“cv::Rect_<int>”的声明
+F:\Program\CfhsImgPro\Include\Algorithm\Func.h(125): warning C4251: “defect_sample_info::defect_sample_middle_rotated_rect”: class“cv::RotatedRect”需要有 dll 接口由 struct“defect_sample_info”的客户端使用
+  D:\opencv-4.0.1_without_gpu\include\opencv2/core/types.hpp(504): note: 参见“cv::RotatedRect”的声明
+F:\Program\CfhsImgPro\Include\Algorithm\Func.h(126): warning C4251: “defect_sample_info::defect_sample_small_rotated_rect”: class“cv::RotatedRect”需要有 dll 接口由 struct“defect_sample_info”的客户端使用
+  D:\opencv-4.0.1_without_gpu\include\opencv2/core/types.hpp(504): note: 参见“cv::RotatedRect”的声明
+F:\Program\CfhsImgPro\Include\Algorithm\Func.h(128): warning C4251: “defect_sample_info::defect_sample”: class“cv::Mat”需要有 dll 接口由 struct“defect_sample_info”的客户端使用
+  D:\opencv-4.0.1_without_gpu\include\opencv2/core/mat.hpp(789): note: 参见“cv::Mat”的声明
+F:\Program\CfhsImgPro\Include\Algorithm\Func.h(130): warning C4251: “defect_sample_info::defect_sample_big_mask”: class“cv::Mat”需要有 dll 接口由 struct“defect_sample_info”的客户端使用
+  D:\opencv-4.0.1_without_gpu\include\opencv2/core/mat.hpp(789): note: 参见“cv::Mat”的声明
+F:\Program\CfhsImgPro\Include\Algorithm\Func.h(131): warning C4251: “defect_sample_info::defect_sample_middle_mask”: class“cv::Mat”需要有 dll 接口由 struct“defect_sample_info”的客户端使用
+  D:\opencv-4.0.1_without_gpu\include\opencv2/core/mat.hpp(789): note: 参见“cv::Mat”的声明
+F:\Program\CfhsImgPro\Include\Algorithm\Func.h(132): warning C4251: “defect_sample_info::defect_sample_small_mask”: class“cv::Mat”需要有 dll 接口由 struct“defect_sample_info”的客户端使用
+  D:\opencv-4.0.1_without_gpu\include\opencv2/core/mat.hpp(789): note: 参见“cv::Mat”的声明
+F:\Program\CfhsImgPro\Include\Algorithm\Func.h(133): warning C4251: “defect_sample_info::defect_sample_mask”: class“cv::Mat”需要有 dll 接口由 struct“defect_sample_info”的客户端使用
+  D:\opencv-4.0.1_without_gpu\include\opencv2/core/mat.hpp(789): note: 参见“cv::Mat”的声明
+F:\Program\CfhsImgPro\Include\Algorithm\Func.h(135): warning C4251: “defect_sample_info::defect_sample_with_middle_rotated_rect”: class“cv::Mat”需要有 dll 接口由 struct“defect_sample_info”的客户端使用
+  D:\opencv-4.0.1_without_gpu\include\opencv2/core/mat.hpp(789): note: 参见“cv::Mat”的声明
+F:\Program\CfhsImgPro\Include\Algorithm\Func.h(136): warning C4251: “defect_sample_info::defect_sample_with_small_rotated_rect”: class“cv::Mat”需要有 dll 接口由 struct“defect_sample_info”的客户端使用
+  D:\opencv-4.0.1_without_gpu\include\opencv2/core/mat.hpp(789): note: 参见“cv::Mat”的声明
+F:\Program\CfhsImgPro\Include\Algorithm\Func.h(138): warning C4251: “defect_sample_info::defect_sample_with_filter”: class“cv::Mat”需要有 dll 接口由 struct“defect_sample_info”的客户端使用
+  D:\opencv-4.0.1_without_gpu\include\opencv2/core/mat.hpp(789): note: 参见“cv::Mat”的声明
+F:\Program\CfhsImgPro\Include\Algorithm\Func.h(144): warning C4251: “defect_sample_info::defect_location_exibit_to_client”: class“cv::Point_<int>”需要有 dll 接口由 struct“defect_sample_info”的客户端使用
+  D:\opencv-4.0.1_without_gpu\include\opencv2/core/types.hpp(190): note: 参见“cv::Point_<int>”的声明
+F:\Program\CfhsImgPro\Include\Algorithm\Func.h(170): warning C4251: “LabelAndContour::contour”: class“std::vector<std::vector<cv::Point,std::allocator<_Ty>>,std::allocator<std::vector<_Ty,std::allocator<_Ty>>>>”需要有 dll 接口由 class“LabelAndContour”的客户端使用
+          with
+          [
+              _Ty=cv::Point
+          ]
+  D:\opencv-4.0.1_without_gpu\include\opencv2/features2d.hpp(421): note: 参见“std::vector<std::vector<cv::Point,std::allocator<_Ty>>,std::allocator<std::vector<_Ty,std::allocator<_Ty>>>>”的声明
+          with
+          [
+              _Ty=cv::Point
+          ]
+F:\Program\CfhsImgPro\Include\Algorithm\Func.h(171): warning C4251: “LabelAndContour::hierarchy”: class“std::vector<cv::Vec4i,std::allocator<_Ty>>”需要有 dll 接口由 class“LabelAndContour”的客户端使用
+          with
+          [
+              _Ty=cv::Vec4i
+          ]
+  F:\Program\CfhsImgPro\Include\Algorithm\Func.h(163): note: 参见“std::vector<cv::Vec4i,std::allocator<_Ty>>”的声明
+          with
+          [
+              _Ty=cv::Vec4i
+          ]
+f:\program\cfhsimgpro\cfhsimgpro\Algorithm.h(153): warning C4244: “初始化”: 从“int64”转换到“double”，可能丢失数据
+f:\program\cfhsimgpro\cfhsimgpro\Algorithm.h(174): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+f:\program\cfhsimgpro\cfhsimgpro\Algorithm.h(239): warning C4244: “初始化”: 从“int64”转换到“double”，可能丢失数据
+Server.cpp(354): warning C4018: “<”: 有符号/无符号不匹配
+Server.cpp(380): warning C4018: “<”: 有符号/无符号不匹配
+Server.cpp(405): warning C4018: “<”: 有符号/无符号不匹配
+Server.cpp(801): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+Server.cpp(804): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+Server.cpp(807): warning C4800: “BOOL”: 将值强制为布尔值“true”或“false”(性能警告)
+Server.cpp(890): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+Server.cpp(928): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+Server.cpp(929): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+Server.cpp(1465): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+Server.cpp(1484): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+Server.cpp(1934): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+Server.cpp(1937): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+Server.cpp(1956): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+Server.cpp(2031): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+Server.cpp(2037): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+    正在创建库 F:\Program\CfhsImgPro\x64\Release\CfhsImgPro.lib 和对象 F:\Program\CfhsImgPro\x64\Release\CfhsImgPro.exp
+  正在生成代码
+  134 of 3595 functions ( 3.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    14 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+json_vc71_libmt.lib(json_writer.obj) : warning LNK4099: 未找到 PDB“lib_json.pdb”(使用“json_vc71_libmt.lib(json_writer.obj)”或在“F:\Program\CfhsImgPro\x64\Release\lib_json.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+json_vc71_libmt.lib(json_value.obj) : warning LNK4099: 未找到 PDB“lib_json.pdb”(使用“json_vc71_libmt.lib(json_value.obj)”或在“F:\Program\CfhsImgPro\x64\Release\lib_json.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+json_vc71_libmt.lib(json_reader.obj) : warning LNK4099: 未找到 PDB“lib_json.pdb”(使用“json_vc71_libmt.lib(json_reader.obj)”或在“F:\Program\CfhsImgPro\x64\Release\lib_json.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+  CfhsImgPro.vcxproj -> F:\Program\CfhsImgPro\x64\Release\CfhsImgPro.exe
+  CfhsImgPro.vcxproj -> F:\Program\CfhsImgPro\x64\Release\CfhsImgPro.pdb (Full PDB)

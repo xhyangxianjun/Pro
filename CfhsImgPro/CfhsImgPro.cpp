@@ -125,16 +125,16 @@ int main()
 		100, 100, mainWindowWidth, mainWindowHeight, 0, 0, GetModuleHandle(0), 0);
 
 
-	//HWND hwnd1 = GetConsoleWindow();
-	//HMENU hmenu1 = GetSystemMenu(hwnd1, false);
-	//RemoveMenu(hmenu1, SC_CLOSE, MF_BYCOMMAND);
-	//LONG style = GetWindowLong(hwnd1, GWL_STYLE);
-	//style &= ~(WS_MINIMIZEBOX);
-	//SetWindowLong(hwnd1, GWL_STYLE, style);
-	//SetWindowPos(hwnd1, HWND_TOP, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
-	//ShowWindow(hwnd1, SW_SHOWNORMAL);
-	//DestroyMenu(hmenu1);
-	//ReleaseDC(hwnd1, NULL);
+	HWND hwnd1 = GetConsoleWindow();
+	HMENU hmenu1 = GetSystemMenu(hwnd1, false);
+	RemoveMenu(hmenu1, SC_CLOSE, MF_BYCOMMAND);
+	LONG style = GetWindowLong(hwnd1, GWL_STYLE);
+	style &= ~(WS_MINIMIZEBOX);
+	SetWindowLong(hwnd1, GWL_STYLE, style);
+	SetWindowPos(hwnd1, HWND_TOP, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
+	ShowWindow(hwnd1, SW_SHOWNORMAL);
+	DestroyMenu(hmenu1);
+	ReleaseDC(hwnd1, NULL);
 
 	AutoPowerOn();
 

@@ -113,7 +113,7 @@ using namespace ml;
 
 //ITO算子
 int AlgorithmInterface_ITO(Mat src, string directory_name, map<int, vector<string>>  &DefectInfoData, int length, int thresh,
-							int top, int left, int right, int bottom, int limit, int iter, Mat &img)
+							int top, int left, int right, int bottom, int limit, int iter, int defectnum, Mat &img)
 {
 	ITODetector detector;
 	detector.set_length(length);
@@ -124,24 +124,6 @@ int AlgorithmInterface_ITO(Mat src, string directory_name, map<int, vector<strin
 	detector.set_bottom(bottom);
 	detector.set_limit(limit);
 	detector.set_iter(iter);
-
-	//detector.set_length(40);
-	//detector.set_thresh(15);
-	//detector.set_top(800);
-	//detector.set_left(1400);
-	//detector.set_right(200);
-	//detector.set_bottom(800);
-	//detector.set_limit(100);
-	//detector.set_iter(8);
-
-	//cout << "set_length = " << length << endl;
-	//cout << "set_thresh = " << thresh << endl;
-	//cout << "set_top = " << top << endl;
-	//cout << "set_left = " << left << endl;
-	//cout << "set_right = " << right << endl;
-	//cout << "set_bottom = " << bottom << endl;
-	//cout << "set_limit = " << limit << endl;
-	//cout << "set_iter = " << iter << endl;
 
 	if (src.empty())
 	{
@@ -165,23 +147,15 @@ int AlgorithmInterface_ITO(Mat src, string directory_name, map<int, vector<strin
 	vector<string > AataElem;
 	cout << "缺陷个数:" << lines.size() << endl;
 	int ilimit = 0;
-	if (lines.size() > limit)
-	{
-		ilimit = limit;
-	}
-	else
-	{
-		ilimit = lines.size();
-	}
+
+	ilimit = defectnum<limit ? defectnum : limit;
+	ilimit = ilimit < lines.size() ? ilimit : lines.size();
+
 	for (int i = 0; i < ilimit; i++)
-	{
-		//cout << string(100, '#') << endl;
+	{		
 		string buffer;
 		Point pt1 = lines[i].pt_out;
 		Point pt2 = lines[i].pt_in;
-		//cout << "pt1.x = " << pt1.x << "pt1.y = " << pt1.y << endl;
-		//cout << "pt2.x = " << pt2.x << "pt2.y = " << pt2.y << endl;
-		//cout << "Length = "<< lines[i].length << endl;
 		buffer = to_string(pt1.x) + "," + to_string(pt1.y);
 		AataElem.push_back(buffer);			//坐标1		
 		buffer = to_string(pt2.x) + "," + to_string(pt2.y);

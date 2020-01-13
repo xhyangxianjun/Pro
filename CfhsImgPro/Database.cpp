@@ -33,8 +33,6 @@ MYSQL_RES* res; //一个结果集结构体
 MYSQL_ROW row;  //char** 二维数组，存放一条条记录
 
 
-extern void CurrentTime();
-
 CDatabase::CDatabase()
 {
 	//InitRes();
@@ -83,7 +81,7 @@ void CDatabase::InitRes()
 	GetPrivateProfileString("数据库参数", "DatabaseName", NULL, szParameter, 16, szFilePath);
 	pszDBName = szParameter;
 
-	CurrentTime(); cout << "Database IP = " << pszIP << endl;
+	cout << "Database IP = " << pszIP << endl;
 
 	mysql_init(&m_sqlCon);
 	mysql_options(&m_sqlCon, MYSQL_SET_CHARSET_NAME, "gbk");
@@ -119,7 +117,7 @@ bool CDatabase::ConnectDatabase()
 	// localhost:服务器 root为账号密码 test为数据库名 3306为端口 
 	if (!mysql_real_connect(&m_sqlCon, pszIP.c_str(), pszUser.c_str(), pszPwd.c_str(), pszDBName.c_str(), 3306, NULL, 0))
 	{
-		CurrentTime();  std::cout << "Database connection fail !" << std::endl;
+		std::cout << "Database connection fail !" << std::endl;
 		return false;
 	}
 	return true;
@@ -136,7 +134,7 @@ bool CDatabase::ConnectDatabase()
 *************************************************************************/
 void CDatabase::CloseDatabase()
 {
-	CurrentTime(); std::cout << "Database close !" << std::endl;
+	std::cout << "Database close !" << std::endl;
 	mysql_close(&m_sqlCon);
 	return;
 }
@@ -170,8 +168,8 @@ void CDatabase::ReadWorkerParam(const char* pQuery)
 	//cout << pQuery << endl;
 	if(mysql_query(&m_sqlCon, pQuery))		
 	{
-		CurrentTime();  cout << " query database fail" << endl;
-		CurrentTime();  std::cout << " pQuery=： " << pQuery << std::endl;
+		 cout << " query database fail" << endl;
+		 std::cout << " pQuery=： " << pQuery << std::endl;
 		return;
 	}
 	res = mysql_store_result(&m_sqlCon);
@@ -180,26 +178,27 @@ void CDatabase::ReadWorkerParam(const char* pQuery)
 		while ((row = mysql_fetch_row(res)) != NULL)
 		{
 			m_StationNoInfo.strToolPara			= row[0];	
-			m_StationNoInfo.strDefectDefine		= row[1];
-			m_StationNoInfo.strDefectScreensing = row[2];
-			m_StationNoInfo.strFeatures			= row[3];
-			m_StationNoInfo.strProName			= row[4];
-			m_StationNoInfo.strBatchName		= row[5];
-			m_StationNoInfo.DiskSpaceAlarm		= atoi(row[6]);
-			m_StationNoInfo.DiskSpaceDelete		= atoi(row[7]);	
-			m_StationNoInfo.SysOnLine			= atoi(row[8]);
-			m_StationNoInfo.Syslangage 			= atoi(row[9]);
-			m_StationNoInfo.SaveOKImg			= atoi(row[10]);
-			m_StationNoInfo.SaveNGImg			= atoi(row[11]);
-			m_StationNoInfo.SaveCompressedOKImg = atoi(row[12]);
-			m_StationNoInfo.SaveCompressedNGImg = atoi(row[13]);
-			m_StationNoInfo.AlgorithmOnOrOff	= atoi(row[14]);
-			m_StationNoInfo.SamplingCompressedImg = atoi(row[15]);
-			m_StationNoInfo.StationDynamic		= atoi(row[16]);
+			m_StationNoInfo.DefectNum			= atoi(row[1]);
+			m_StationNoInfo.strDefectDefine		= row[2];
+			m_StationNoInfo.strDefectScreensing = row[3];
+			m_StationNoInfo.strFeatures			= row[4];
+			m_StationNoInfo.strProName			= row[5];
+			m_StationNoInfo.strBatchName		= row[6];
+			m_StationNoInfo.DiskSpaceAlarm		= atoi(row[7]);
+			m_StationNoInfo.DiskSpaceDelete		= atoi(row[8]);	
+			m_StationNoInfo.SysOnLine			= atoi(row[9]);
+			m_StationNoInfo.Syslangage 			= atoi(row[10]);
+			m_StationNoInfo.SaveOKImg			= atoi(row[11]);
+			m_StationNoInfo.SaveNGImg			= atoi(row[12]);
+			m_StationNoInfo.SaveCompressedOKImg = atoi(row[13]);
+			m_StationNoInfo.SaveCompressedNGImg = atoi(row[14]);
+			m_StationNoInfo.AlgorithmOnOrOff	= atoi(row[15]);
+			m_StationNoInfo.SamplingCompressedImg = atoi(row[16]);
+			m_StationNoInfo.StationDynamic		= atoi(row[17]);
 		}
 	}	
 	mysql_free_result(res);
-	CurrentTime();  cout << "config和station联合查询成功！" << endl;
+	cout << "config和station联合查询成功！" << endl;
 	return;
 }
 /*************************************************************************
@@ -216,8 +215,8 @@ bool CDatabase::SaveData(const char* pQuery)
 {
 	if (0 != mysql_query(&m_sqlCon, pQuery))
 	{
-		CurrentTime();  std::cout << " Save OK or NG data into database fail"<< std::endl;
-		CurrentTime();  std::cout << " strQuery=： " << pQuery << std::endl;
+		std::cout << " Save OK or NG data into database fail"<< std::endl;
+		std::cout << " strQuery=： " << pQuery << std::endl;
 		return false;
 	}	
 	return true;
@@ -238,9 +237,9 @@ int CDatabase::filtrate(const char* pQuery)
 	int fiResult;
 	if (mysql_query(&m_sqlCon, pQuery))
 	{
-		CurrentTime();  cout << "filtrate query =" << pQuery << endl;
-		CurrentTime();  cout << " query database fail" << endl;
-		CurrentTime();  cout << mysql_error(&m_sqlCon) << endl;
+		cout << "filtrate query =" << pQuery << endl;
+		cout << " query database fail" << endl;
+		cout << mysql_error(&m_sqlCon) << endl;
 		return NULL;
 	}
 	res = mysql_store_result(&m_sqlCon);
@@ -270,8 +269,8 @@ void CDatabase::ReadFeaturePara(const char* pQuery, vector<string> &info)
 {	
 	if (mysql_query(&m_sqlCon, pQuery))
 	{
-		CurrentTime();  cout << " query database fail" << endl;
-		CurrentTime();  cout << "ReadFeaturePara pQuery  = " << pQuery << endl;
+		cout << " query database fail" << endl;
+		cout << "ReadFeaturePara pQuery  = " << pQuery << endl;
 		return;
 	}
 	res = mysql_store_result(&m_sqlCon);
@@ -286,7 +285,7 @@ void CDatabase::ReadFeaturePara(const char* pQuery, vector<string> &info)
 		}
 	}
 	mysql_free_result(res);
-	CurrentTime();  cout << "查询系统语言成功 "<< endl;
+	cout << "查询系统语言成功 "<< endl;
 	return;
 }
 
@@ -304,8 +303,8 @@ string CDatabase::ReadResultMode(const char* pQuery)
 {
 	if (mysql_query(&m_sqlCon, pQuery))
 	{
-		CurrentTime();  cout << " query database fail" << endl;
-		CurrentTime();  cout << "ReadResultMode pQuery  = " << pQuery << endl;
+		cout << " query database fail" << endl;
+		cout << "ReadResultMode pQuery  = " << pQuery << endl;
 		return NULL;
 	}
 	string strPara;
@@ -338,8 +337,8 @@ void CDatabase::ReadInAndOutImgPath(const char* pQuery, int flag)
 {
 	if (mysql_query(&m_sqlCon, pQuery))
 	{
-		CurrentTime();  cout << " query database fail" << endl;
-		CurrentTime();  cout << "ReadResultMode pQuery  = " << pQuery << endl;
+		cout << " query database fail" << endl;
+		cout << "ReadResultMode pQuery  = " << pQuery << endl;
 		return ;
 	}
 	res = mysql_store_result(&m_sqlCon);

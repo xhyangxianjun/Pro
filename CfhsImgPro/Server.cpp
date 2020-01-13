@@ -45,6 +45,7 @@ Copyright (C), 2019-2100, CFHS Tech. Co., Ltd.
 #include <iostream>
 #include <fstream>
 #include <sstream>        //istringstream 必须包含这个头文件
+#include <mutex>
 
 #pragma comment(lib,"Iphlpapi.lib") //需要添加Iphlpapi.lib库
 
@@ -92,6 +93,7 @@ queue<string> RecvID;
 vector<string> Socketdata;     //接受上位机软件下发的数据分隔保存
 queue<Mat> ImgMat;
 
+
 int	nResultMode;
 bool ControlF;
 Server m_server;
@@ -110,6 +112,7 @@ void InitAlgrithmPara_ITO(int i);
 //相机部分
 /*********************************************************************/
 
+std::mutex my_mutex_1;
 
 #include <time.h> 
 #include <stdio.h>
@@ -157,7 +160,7 @@ void CameraGrab();
 void saveOriginalBmpImage();
 void saveOriginalJpgImage();
 int write_log(FILE* pFile, const char *format, ...);
-void CurrentTime();
+
 
 void CameraInterface(string CameraType, int SaveImg)
 {
@@ -220,7 +223,6 @@ void CameraGrab()
 		Sleep(1000);
 	}
 
-
 	Xfer->Freeze();
 	if (!Xfer->Wait(5000))
 		printf("Grab could not stop properly.\n");
@@ -242,9 +244,9 @@ FreeHandles:
 	if (Xfer)     delete Xfer;
 	if (Buffers)  delete Buffers;
 	if (Acq)      delete Acq;
-	CurrentTime(); cout << "View & Xfer & Buffers were delete!" << endl;
-	CurrentTime(); cout << "Camera  connect close!" << endl;
-	CurrentTime(); cout << "--------------------------------------------------------------------" << endl;
+	cout << "View & Xfer & Buffers were delete!" << endl;
+	cout << "Camera  connect close!" << endl;
+	cout << "--------------------------------------------------------------------" << endl;
 	write_log(pFile, "%s \n", "Camera  connect close!");
 	write_log(pFile, "%s \n", "--------------------------------------------------------------------!");
 	return;
@@ -263,7 +265,7 @@ void saveOriginalJpgImage()
 	cout << strOrigJpgName.c_str() << endl;
 }
 
-//int iiii = 0;
+int iiii = 0;
 static void XferCallback(SapXferCallbackInfo *pInfo)
 {
 	//printf("into xfercallback \n");
@@ -294,9 +296,10 @@ static void XferCallback(SapXferCallbackInfo *pInfo)
 		ImgMat.push(img);
 		bCamera = true;
 
+		/**********************测试使用代码******************************/
 		//Mat image;
 		//string strimg;
-		//strimg = "D:\\20191220\\106-2\\" + to_string(iiii) + ".bmp";
+		//strimg = "D:\\20191220\\111\\" + to_string(iiii) + ".bmp";
 		//image = imread(strimg);
 		//cout << "strimg = " << strimg << endl;
 		//iiii++;
@@ -305,7 +308,8 @@ static void XferCallback(SapXferCallbackInfo *pInfo)
 		//cvtColor(image, imgGray, CV_BGR2GRAY);
 		//ImgMat.push(imgGray);
 		//bCamera = true;
-		cout << "bCamera = " << bCamera << endl;
+		//cout << "bCamera = " << bCamera << endl;
+		/**********************************************************************/
 
 		//char* pImageData = (char*)malloc(width*height * sizeof(char));
 		//memcpy(pImageData, pData, height *width * sizeof(char));
@@ -313,7 +317,7 @@ static void XferCallback(SapXferCallbackInfo *pInfo)
 		//namedWindow("img", 0); imshow("img", img); waitKey(1);
 		//imwrite("D:\\打标\\4444.bmp", img);
 		/**************************/
-		CurrentTime(); printf("Save ImgMat sucess \n");
+		printf("Save ImgMat sucess \n");
 	}
 	//printf("leave xfercallback \n");
 }
@@ -441,12 +445,12 @@ int write_log(FILE* pFile, const char *format, ...)
 
 void CurrentTime()
 {
-	string aaa;
-	SYSTEMTIME st = { 0 };
-	GetLocalTime(&st);
+	SYSTEMTIME sys = { 0 };
+	GetLocalTime(&sys);
 	//获取当前时间 可精确到ms	
-	std::cout << "[" << st.wHour << ":" << st.wMinute << ":" << st.wSecond << ":" << st.wMilliseconds << "]   ";
 
+	printf("当前系统时间为：  %4d/%02d/%02d %02d:%02d:%02d.%03d \n", sys.wYear, sys.wMonth, sys.wDay, sys.wHour, sys.wMinute, sys.wSecond, sys.wMilliseconds);
+	return;
 }
 //判断文件夹是存在
 bool file_exists(string path)
@@ -513,12 +517,13 @@ bool Server::CreateSocket()
 		cout << "Socket error" << endl;
 	m_nServerSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);	//设定TCP协议接口;失败返回INVALID_SOCKET
 	if (m_nServerSocket == INVALID_SOCKET)
-	{		
-		CurrentTime();	cout << "Start Server Failed" << endl;
+	{	
+		cout << "Start Server Failed" << endl;
 		write_log(pFile, "%s \n", "Start Server Failed");
 		return false;
-	}	
-	CurrentTime();	cout << "Start Server Succeed" << endl;	
+	}
+	
+	cout << "Start Server Succeed" << endl;	
 	write_log(pFile, "%s \n", "Start Server Succeed");	
 	SOCKADDR_IN addrSrv;
 	addrSrv.sin_family = AF_INET;
@@ -527,17 +532,21 @@ bool Server::CreateSocket()
 	
 	int retVal  = ::bind(m_nServerSocket, (LPSOCKADDR)&addrSrv, sizeof(SOCKADDR_IN));
 	if (retVal == SOCKET_ERROR) {   //绑定服务器地址和端口号;成功，返回0，否则为SOCKET_ERROR
-		CurrentTime(); printf("Failed bind:%d\n", WSAGetLastError());
+		printf("Failed bind:%d\n", WSAGetLastError());
 		return false;
-	}	
-	CurrentTime(); cout << "Bind Succeed !" << endl;			
+	}
+
+	cout << "Bind Succeed !" << endl;
+			
 	if (listen(m_nServerSocket, 10) == SOCKET_ERROR)
-	{		
-		CurrentTime();	printf("Listen failed:%d", WSAGetLastError());
+	{
+	
+		printf("Listen failed:%d", WSAGetLastError());
 		write_log(pFile, "%s \n", "Listen failed");
 		return false;
-	}	
-	CurrentTime();	cout << "Listen Succeed" << endl;
+	}
+
+	cout << "Listen Succeed" << endl;
 	write_log(pFile, "%s \n", "Listen Succeed");
 	return true;
 }
@@ -547,8 +556,9 @@ int ServerThread(SOCKET *ClientSocket)
 	if (!m_server.m_CDatabase.ConnectDatabase())  //数据库连接
 	{
 		write_log(pFile, "%s \n", "Database connection fail !");
-	}	
-	CurrentTime();	cout << "Database connection success !" << endl;
+	}
+	
+	cout << "Database connection success !" << endl;
 	write_log(pFile, "%s \n", "Database connection success !");
 
 	m_server.initInfo();
@@ -574,19 +584,46 @@ int ServerThread(SOCKET *ClientSocket)
 其  他: 无
 *************************************************************************/
 SOCKET Server::AcceptSocket()
-{		
-	while (1)
+{	
+	//设置Socket为非阻塞模式
+	int iMode = 1;
+	int retVal;//调用Socket函数的返回值
+	retVal = ioctlsocket(m_nServerSocket, FIONBIO, (u_long FAR*) &iMode);
+	if (retVal == SOCKET_ERROR)
 	{
-		ControlF = false;
+		printf("设置Socket为非阻塞模式失败!\n");
+		WSACleanup();
+		return -1;
+	}
+
+	while (1)
+	{		
 		//循环接收客户端连接请求并创建服务线程
 		SOCKET *ClientSocket = new SOCKET;
 		ClientSocket = (SOCKET*)malloc(sizeof(SOCKET));
 		sockaddr_in nClientSocket;
 		//接收客户端连接请求
-		int SockAddrlen = sizeof(sockaddr);
-		
-		*ClientSocket = ::accept(m_nServerSocket, (SOCKADDR*)&nClientSocket, &SockAddrlen);		
-		CurrentTime();   cout << "一个客户端已连接到服务器，socket是：" << *ClientSocket << endl;
+		int SockAddrlen = sizeof(sockaddr);		
+		*ClientSocket = ::accept(m_nServerSocket, (SOCKADDR*)&nClientSocket, &SockAddrlen);
+		if (INVALID_SOCKET == *ClientSocket)
+		{
+			int err = WSAGetLastError();
+			if (err == WSAEWOULDBLOCK)
+			{
+				Sleep(50);
+				continue;
+			}
+			else
+			{
+				printf("accept failed!\n");
+				closesocket(m_nServerSocket);
+				WSACleanup();
+				return -1;
+			}
+		}
+		ControlF = false;
+		CurrentTime();
+		cout << "一个客户端已连接到服务器，socket是：" << *ClientSocket << endl;
 		thread ServerThd(ServerThread, ClientSocket);//CreateThread(NULL, 0, &ServerThread, ClientSocket, 0, NULL);
 		ServerThd.detach();
 	}
@@ -620,11 +657,28 @@ void Server::RecvAndSendSocket(SOCKET recvsocket)
 		if( ((nReady == 1) && (0 == m_CDatabase.m_StationNoInfo.SysOnLine))||(1 == m_CDatabase.m_StationNoInfo.SysOnLine))
 		{			
 			char mess[100] = "#ReadyOK@"; // 回复值代表相机启动成功		
-			int isend = send(recvsocket, mess, (int)strlen(mess), 0);
-			if (isend == 0 || isend == SOCKET_ERROR)
+			int isend;
+		
+			isend = send(recvsocket, mess, (int)strlen(mess), 0);
+			if (SOCKET_ERROR == isend)
 			{
-				write_log(pFile, "%s \n", " send Camera connect info failed");				
-				CurrentTime(); cout << "send Camera connect info failed" << endl;
+				int err = WSAGetLastError();
+				if (err == WSAEWOULDBLOCK)
+				{
+					Sleep(5);
+					continue;
+				}
+				else
+				{
+					write_log(pFile, "%s \n", " send Camera connect info failed");
+					cout << "send Camera connect info failed" << endl;
+					return;
+				}
+			}
+			if (isend == 0)
+			{
+				write_log(pFile, "%s \n", "Sending message failed, disconnect");
+				cout << "Sending message failed, disconnect" << endl;
 				return;
 			}
 			else
@@ -632,16 +686,17 @@ void Server::RecvAndSendSocket(SOCKET recvsocket)
 				if (nReady == 1)
 				{
 					write_log(pFile, "Send Data %s \n", "#ReadyOK@");
-					write_log(pFile, "%s \n", "Camera connect sucess");					
-					CurrentTime(); cout << "Camera connect sucess" << endl;
+					write_log(pFile, "%s \n", "Camera connect sucess");
+					cout << "Camera connect sucess" << endl;
+					break;
 				}
 				else
 				{
-					write_log(pFile, "%s \n", "Socket connect sucess");			
-					CurrentTime(); cout << "Socket connect sucess" << endl;
+					write_log(pFile, "%s \n", "Socket connect sucess");
+					cout << "Socket connect sucess" << endl;
+					break;
 				}
-			}
-			break;
+			}	
 		}
 		Sleep(100);
 	}
@@ -652,18 +707,43 @@ void Server::RecvAndSendSocket(SOCKET recvsocket)
 	while (true)
 	{
 		// 从客户端接收数据
-		char buff[256];
-		memset(buff, 0, sizeof(buff));
-		int nRecv = recv(recvsocket, buff, 256, 0);//从客户端接受消息  #发送工位号#方案名#批次#产品ID@
-		if (nRecv == 0 || nRecv == SOCKET_ERROR)
-		{
-			write_log(pFile, "%s \n", "File accept Failed, disconnect");
-			CurrentTime(); cout << "File accept Failed, disconnect" << endl;
-			ControlF = true;
-			break;
+		char buff[256];	
+		try {
+			memset(buff, 0, sizeof(buff));
+			std::lock_guard<std::mutex> my_lock_guard(my_mutex_1);
+			int nRecv = recv(recvsocket, buff, 256, 0);//从客户端接受消息  #发送工位号#方案名#批次#产品ID@
+			if (SOCKET_ERROR == nRecv)
+			{
+				int err = WSAGetLastError();
+				if (err == WSAEWOULDBLOCK)
+				{
+					Sleep(1);
+					continue;
+				}
+				else if (err == WSAETIMEDOUT || err == WSAENETDOWN)
+				{
+					write_log(pFile, "%s \n", "File accept Failed, disconnect");
+					cout << "File accept Failed, disconnect" << endl;
+					ControlF = true;
+					return;
+				}
+			}
+			if (nRecv == 0)
+			{
+				write_log(pFile, "%s \n", "File accept Failed, disconnect");
+				cout << "File accept Failed, disconnect" << endl;
+				ControlF = true;
+				return;
+			}
 		}
+		catch (const std::exception& e) { // caught by reference to base
+			std::cout << " socket error :"	<< e.what() << "'\n";
+		}
+
+
+
 		write_log(pFile, " Recv data : %s \n", buff);
-		CurrentTime(); cout << "Recv data:" << buff << endl;
+		cout << "Recv data:" << buff << endl;
 		string strImgName = OriginalFolderPath + "\\Org.bmp";
 		if (file_exists(strImgName))
 		{
@@ -684,10 +764,10 @@ void Server::RecvAndSendSocket(SOCKET recvsocket)
 		}
 		RecvData.push(strbuf);
 		ReRecvData.push(strbuf);
-		CurrentTime();  cout << "socket RecvData size0  = " << RecvData.size() <<  endl;
+		cout << "socket RecvData size0  = " << RecvData.size() <<  endl;
 		if (ControlCame)
 		{
-			thread findImg(FindCameraImg, recvsocket); //启动相机拍图
+			thread findImg(FindCameraImg, recvsocket); //启动流程以及相机拍图
 			findImg.detach();
 			ControlCame = false;
 		}
@@ -708,7 +788,7 @@ void FindCameraImg(SOCKET recvsocket)
 	
 	while (!RecvData.empty())
 	{		
-		CurrentTime();  cout << "socket RecvData size1 = " << RecvData.size() << endl;
+		cout << "socket RecvData size1 = " << RecvData.size() << endl;
 		if (!Socketdata.empty())
 		{
 			Socketdata.clear();
@@ -737,34 +817,6 @@ void FindCameraImg(SOCKET recvsocket)
 		int flag = 1;
 		string new_BmpName;
 
-
-		// 正常测试流程0  ；正常流程下，模式  软件离线：1-离线，0-在线；  
-		if (("0" == str) && (m_server.m_CDatabase.m_StationNoInfo.SysOnLine != 1) )
-		{
-			write_log(pFile, "%s %s\n", "The current mode is 0 and SysOnLine is ",   to_string(m_server.m_CDatabase.m_StationNoInfo.SysOnLine).c_str());
-			//OrgPathName = OriginalFolderPath + "\\Org.bmp";
-			//while (true)
-			//{
-			//	if (file_exists(OrgPathName))
-			//	{
-			//		write_log(pFile, " Find if the OrgPathName file exists:: : %s \n", OrgPathName.c_str());
-			//		cout << " Find if the OrgPathName file exists:::" << OrgPathName << endl;
-			//		break;
-			//	}
-			//	Sleep(1000);
-			//}
-
-			while (!bCamera)
-			{
-				Sleep(500);			
-			}
-			bCamera = false;
-			RecvID.push(strProductID);
-			
-			CurrentTime();  cout << "RecvImg and RecvID push :" << strProductID << " RecvData is pop :" << RecvData.front() << endl;
-			RecvData.pop();
-		}
-
 		if (m_server.m_CDatabase.m_StationNoInfo.SysOnLine == 1) //模式  软件离线：1-离线，0-在线；
 		{
 			if (("OutImg" == str))  //离线模式下的图片导出 后一位数据回复1
@@ -775,7 +827,7 @@ void FindCameraImg(SOCKET recvsocket)
 				if (!file_exists(m_server.m_CDatabase.m_StationNoInfo.strOutputImgPath))
 				{
 					string command;
-					CurrentTime();	cout << "strOutputImgPath= : " << m_server.m_CDatabase.m_StationNoInfo.strOutputImgPath << endl;
+					cout << "strOutputImgPath= : " << m_server.m_CDatabase.m_StationNoInfo.strOutputImgPath << endl;
 					size_t pos;
 					pos = m_server.m_CDatabase.m_StationNoInfo.strOutputImgPath.find("/");
 					while (pos != string::npos)
@@ -784,7 +836,7 @@ void FindCameraImg(SOCKET recvsocket)
 						pos = m_server.m_CDatabase.m_StationNoInfo.strOutputImgPath.find("/");
 					}
 					command = "mkdir " + m_server.m_CDatabase.m_StationNoInfo.strOutputImgPath;
-					CurrentTime(); cout << "command " << command << endl;
+				    cout << "command " << command << endl;
 					system(command.c_str());
 
 				}
@@ -802,9 +854,9 @@ void FindCameraImg(SOCKET recvsocket)
 					strFile = Offlinefiles[i].substr(pos + 1, leng - pos);
 					strNewFile = m_server.m_CDatabase.m_StationNoInfo.strOutputImgPath + "/" + strFile;
 					bool flagfile = CopyFile(Offlinefiles[i].c_str(), strNewFile.c_str(), false);
-					CurrentTime(); cout << "outImg flagfile :" << flagfile << endl;
-					CurrentTime(); cout << "Oldfilepath :" << Offlinefiles[i].c_str() << endl;
-					CurrentTime(); cout << "Newfilepath :" << strNewFile.c_str() << endl;
+					cout << "outImg flagfile :" << flagfile << endl;
+					cout << "Oldfilepath :" << Offlinefiles[i].c_str() << endl;
+					cout << "Newfilepath :" << strNewFile.c_str() << endl;
 					Sleep(300);
 					if (ControlF)
 					{
@@ -815,8 +867,8 @@ void FindCameraImg(SOCKET recvsocket)
 				int isend = SendDetect(recvsocket, OfflinefilesId, flag);
 				if (isend == 0 || isend == SOCKET_ERROR)
 				{
-					write_log(pFile, "%s \n", "SendDetect message failed, disconnect");
-					CurrentTime(); cout << "SendDetect message failed, disconnect" << endl;
+					write_log(pFile, "%s \n", "SendDetect message failed");
+					cout << "SendDetect message failed" << endl;
 					break;
 				}
 				RecvData.pop();
@@ -837,21 +889,20 @@ void FindCameraImg(SOCKET recvsocket)
 				else
 				{
 					write_log(pFile, "%s \n", "The path to import the image does not exist");
-					CurrentTime(); cout << "The path to import the image does not exist" << endl;
+					cout << "The path to import the image does not exist" << endl;
 				}
 				flag = 1;
 				int isend = SendDetect(recvsocket, OfflinefilesId, flag);
 				if (isend == 0 || isend == SOCKET_ERROR)
 				{
 					write_log(pFile, "%s \n", "SendDetect message failed, disconnect");
-					CurrentTime(); cout << "SendDetect message failed, disconnect" << endl;
+					cout << "SendDetect message failed, disconnect" << endl;
 					break;
 				}
 				write_log(pFile, " file name =    %s \n", to_string(Offlinefiles.size()).c_str());
 				for (int i = 0; i < Offlinefiles.size(); i++)
 				{
 					write_log(pFile, " file name =    %s \n", Offlinefiles[i].c_str());
-					//cout << "file name = " << Offlinefiles[i] << endl;
 				}
 
 				RecvData.pop();
@@ -860,7 +911,7 @@ void FindCameraImg(SOCKET recvsocket)
 			else if ("Retest" == str) //复测执行   单张图像时候  执行算法操作回复信息, 文件夹的时候,执行第一张图片,执行算法,回复信息   后一位数据回复1
 			{
 				new_BmpName = Offlinefiles[currentImg];
-				CurrentTime(); cout << "new_BmpName  Retest == str" << new_BmpName << "::::" << currentImg << endl;
+				cout << "new_BmpName  Retest == str" << new_BmpName << "::::" << currentImg << endl;
 				RecvImg.push(new_BmpName);
 				RecvID.push(OfflinefilesId[currentImg]);
 				RecvData.pop();
@@ -873,7 +924,7 @@ void FindCameraImg(SOCKET recvsocket)
 					currentImg = 0;
 				}
 				new_BmpName = Offlinefiles[currentImg];
-				CurrentTime(); cout << "new_BmpName  Last == str" << new_BmpName << "::::" << currentImg << endl;
+				cout << "new_BmpName  Last == str" << new_BmpName << "::::" << currentImg << endl;
 				RecvImg.push(new_BmpName);
 				RecvID.push(OfflinefilesId[currentImg]);
 				RecvData.pop();
@@ -912,7 +963,7 @@ void FindCameraImg(SOCKET recvsocket)
 					if (isend == 0 || isend == SOCKET_ERROR)
 					{
 						write_log(pFile, "%s \n", "SendDetect message failed, disconnect");
-						CurrentTime(); cout << "SendDetect message failed, disconnect" << endl;
+						cout << "SendDetect message failed, disconnect" << endl;
 					}
 				}
 				RecvData.pop();
@@ -937,11 +988,43 @@ void FindCameraImg(SOCKET recvsocket)
 				if (isend == 0 || isend == SOCKET_ERROR)
 				{
 					write_log(pFile, "%s \n", "SendDetect message failed, disconnect");
-					CurrentTime(); cout << "SendDetect message failed, disconnect" << endl;
+					cout << "SendDetect message failed, disconnect" << endl;
 					break;
 				}
 			}
 		}
+		else if (("0" == str) && (m_server.m_CDatabase.m_StationNoInfo.SysOnLine != 1)) // 正常测试流程0  ；正常流程下，模式  软件离线：1-离线，0-在线；  
+		{
+			write_log(pFile, "%s %s\n", "The current mode is 0 and SysOnLine is ", to_string(m_server.m_CDatabase.m_StationNoInfo.SysOnLine).c_str());
+			//OrgPathName = OriginalFolderPath + "\\Org.bmp";
+			//while (true)
+			//{
+			//	if (file_exists(OrgPathName))
+			//	{
+			//		write_log(pFile, " Find if the OrgPathName file exists:: : %s \n", OrgPathName.c_str());
+			//		cout << " Find if the OrgPathName file exists:::" << OrgPathName << endl;
+			//		break;
+			//	}
+			//	Sleep(1000);
+			//}
+
+			while (!bCamera)
+			{
+				Sleep(500);
+			}
+			bCamera = false;
+			RecvID.push(strProductID);
+
+			cout << "RecvImg and RecvID push :" << strProductID << " RecvData is pop :" << RecvData.front() << endl;
+			RecvData.pop();
+		}
+		else
+		{
+			cout << "接受到的数据格式不对！" << endl;
+			write_log(pFile, "%s %s\n", "接受到的数据格式不对！: ", strInfo.c_str());
+			return;
+		}
+		
 		//公共部分代码	
 		if (ControlDefect == true) 
 		{
@@ -954,7 +1037,7 @@ void FindCameraImg(SOCKET recvsocket)
 		{
 			if (ControlF)
 			{
-				CurrentTime(); cout << "End of FindCameraImg" << endl;
+				cout << "End of FindCameraImg" << endl;
 				return;
 			}
 
@@ -962,7 +1045,7 @@ void FindCameraImg(SOCKET recvsocket)
 			Sleep(500);
 			if ((ii % 6) == 0)
 			{
-				CurrentTime(); cout << "socket RecvData is empty, 等待上位机下发数据 ... " << endl;
+				cout << "socket RecvData is empty, 等待上位机下发数据 ... " << endl;
 			}
 
 			
@@ -990,8 +1073,38 @@ int SendDetect(SOCKET recvsocket, vector<string> &RecvInfo, int iflag)
 	strResult += "@";			//查询ID成功回复1,失败0
 	char mess[100];				// "#产品ID#结果#磁盘结果@";   OK--0;  NG---实际数量
 	strcpy(mess, strResult.c_str());
-	int isend = send(recvsocket, mess, (int)strlen(mess), 0);
-	CurrentTime(); cout << "SendDetect data :" << mess << endl;
+
+	int isend;
+	while (true)
+	{
+		std::lock_guard<std::mutex> my_lock_guard(my_mutex_1);
+		isend = send(recvsocket, mess, (int)strlen(mess), 0);
+		if (SOCKET_ERROR == isend)
+		{
+			int err = WSAGetLastError();
+			if (err == WSAEWOULDBLOCK)
+			{
+				Sleep(5);
+				continue;
+			}
+			else
+			{
+				write_log(pFile, "%s \n", " SendDetect message failed");
+				cout << "SendDetect message failed" << endl;
+				return isend;
+			}
+		}
+		if (isend == 0)
+		{
+			write_log(pFile, "%s \n", "Sending message failed, disconnect");
+			cout << "Sending message failed, disconnect" << endl;
+		}
+		else
+		{
+			break;
+		}
+	}
+	cout << "SendDetect data :" << mess << endl;
 	write_log(pFile, "SendDetect data : %s \n", mess);
 	return isend;
 }
@@ -1025,7 +1138,7 @@ void DefectDetect(SOCKET recvsocket)
 				strImg = RecvImg.front();
 				RecvImg.pop();
 
-				CurrentTime(); cout << "算法调用图片名字=" << strImg << endl;
+				cout << "算法调用图片名字=" << strImg << endl;
 				write_log(pFile, "%s  %s \n", "算法调用图片名字=", strImg.c_str());
 				src = imread(strImg);
 				if (src.empty())
@@ -1055,6 +1168,8 @@ void DefectDetect(SOCKET recvsocket)
 			int result = 0;
 			int AlgoriFlag = 0;
 			Mat img;
+			int iSaveBmpStatus = 0;
+			CurrentTime();
 			if (0 == m_server.m_CDatabase.m_StationNoInfo.AlgorithmOnOrOff) //0为算法关闭  1为算法打开
 			{
 				img = src.clone();
@@ -1083,16 +1198,16 @@ void DefectDetect(SOCKET recvsocket)
 							m_server.m_Algorithm_Para.defect_num,
 							m_server.m_Algorithm_Para.defect_accep_min_area ,img);
 
-						CurrentTime(); cout << "m_server.m_Algorithm_Para.aa_reg_min = " << m_server.m_Algorithm_Para.aa_reg_min << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para.aa_reg_max = " << m_server.m_Algorithm_Para.aa_reg_max << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para.grey_dif_pos = " << m_server.m_Algorithm_Para.grey_dif_pos << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para.grey_dif_neg = " << m_server.m_Algorithm_Para.grey_dif_neg << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para.excep_dilate_width = " << m_server.m_Algorithm_Para.excep_dilate_width << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para.excep_dilate_height = " << m_server.m_Algorithm_Para.excep_dilate_height << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para.loop_stride_to_decide = " << m_server.m_Algorithm_Para.loop_stride_to_decide << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para.defect_area = " << m_server.m_Algorithm_Para.defect_area << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para.defect_num = " << m_server.m_Algorithm_Para.defect_num << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para.defect_accep_min_area = " << m_server.m_Algorithm_Para.defect_accep_min_area << endl;
+						cout << "m_server.m_Algorithm_Para.aa_reg_min = " << m_server.m_Algorithm_Para.aa_reg_min << endl;
+						cout << "m_server.m_Algorithm_Para.aa_reg_max = " << m_server.m_Algorithm_Para.aa_reg_max << endl;
+						cout << "m_server.m_Algorithm_Para.grey_dif_pos = " << m_server.m_Algorithm_Para.grey_dif_pos << endl;
+						cout << "m_server.m_Algorithm_Para.grey_dif_neg = " << m_server.m_Algorithm_Para.grey_dif_neg << endl;
+						cout << "m_server.m_Algorithm_Para.excep_dilate_width = " << m_server.m_Algorithm_Para.excep_dilate_width << endl;
+						cout << "m_server.m_Algorithm_Para.excep_dilate_height = " << m_server.m_Algorithm_Para.excep_dilate_height << endl;
+						cout << "m_server.m_Algorithm_Para.loop_stride_to_decide = " << m_server.m_Algorithm_Para.loop_stride_to_decide << endl;
+						cout << "m_server.m_Algorithm_Para.defect_area = " << m_server.m_Algorithm_Para.defect_area << endl;
+						cout << "m_server.m_Algorithm_Para.defect_num = " << m_server.m_Algorithm_Para.defect_num << endl;
+						cout << "m_server.m_Algorithm_Para.defect_accep_min_area = " << m_server.m_Algorithm_Para.defect_accep_min_area << endl;
 						
 					}
 					else if(2 == Algorithm_Type())
@@ -1109,14 +1224,14 @@ void DefectDetect(SOCKET recvsocket)
 							m_server.m_Algorithm_Para_hjh.num_for_stop_inspection,						
 							img);
 
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_hjh.new_model_hjh = " << m_server.m_Algorithm_Para_hjh.new_model << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_hjh.aa_region_positive_hjh = " << m_server.m_Algorithm_Para_hjh.aa_region_positive << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_hjh.aa_region_negative_hjh = " << m_server.m_Algorithm_Para_hjh.aa_region_negative << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_hjh.grey_difference_positive_hjh = " << m_server.m_Algorithm_Para_hjh.grey_difference_positive << endl;
-						CurrentTime(); cout << "mm_server.m_Algorithm_Para_hjh.grey_difference_negative_hjh = " << m_server.m_Algorithm_Para_hjh.grey_difference_negative << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_hjh.max_area_hjh = " << m_server.m_Algorithm_Para_hjh.max_area << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_hjh.min_area_hjh = " << m_server.m_Algorithm_Para_hjh.min_area << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_hjh.num_for_stop_inspection_hjh = " << m_server.m_Algorithm_Para_hjh.num_for_stop_inspection<< endl;
+					    cout << "m_server.m_Algorithm_Para_hjh.new_model_hjh = " << m_server.m_Algorithm_Para_hjh.new_model << endl;
+					    cout << "m_server.m_Algorithm_Para_hjh.aa_region_positive_hjh = " << m_server.m_Algorithm_Para_hjh.aa_region_positive << endl;
+					    cout << "m_server.m_Algorithm_Para_hjh.aa_region_negative_hjh = " << m_server.m_Algorithm_Para_hjh.aa_region_negative << endl;
+					    cout << "m_server.m_Algorithm_Para_hjh.grey_difference_positive_hjh = " << m_server.m_Algorithm_Para_hjh.grey_difference_positive << endl;
+					    cout << "mm_server.m_Algorithm_Para_hjh.grey_difference_negative_hjh = " << m_server.m_Algorithm_Para_hjh.grey_difference_negative << endl;
+					    cout << "m_server.m_Algorithm_Para_hjh.max_area_hjh = " << m_server.m_Algorithm_Para_hjh.max_area << endl;
+					    cout << "m_server.m_Algorithm_Para_hjh.min_area_hjh = " << m_server.m_Algorithm_Para_hjh.min_area << endl;
+					    cout << "m_server.m_Algorithm_Para_hjh.num_for_stop_inspection_hjh = " << m_server.m_Algorithm_Para_hjh.num_for_stop_inspection<< endl;
 					}
 					else if (3 == Algorithm_Type())
 					{
@@ -1129,21 +1244,22 @@ void DefectDetect(SOCKET recvsocket)
 							m_server.m_Algorithm_Para_ITO.detector_right,
 							m_server.m_Algorithm_Para_ITO.detector_bottom,
 							m_server.m_Algorithm_Para_ITO.detector_limit,
-							m_server.m_Algorithm_Para_ITO.detector_iter,						
+							m_server.m_Algorithm_Para_ITO.detector_iter,
+							m_server.m_CDatabase.m_StationNoInfo.DefectNum,
 							img);
 
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_ITO.detector_length = " << m_server.m_Algorithm_Para_ITO.detector_length << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_ITO.detector_thresh = " << m_server.m_Algorithm_Para_ITO.detector_thresh << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_ITO.detector_top = " << m_server.m_Algorithm_Para_ITO.detector_top << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_ITO.detector_left = " << m_server.m_Algorithm_Para_ITO.detector_left << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_ITO.detector_right = " << m_server.m_Algorithm_Para_ITO.detector_right << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_ITO.detector_bottom = " << m_server.m_Algorithm_Para_ITO.detector_bottom << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_ITO.detector_limit = " << m_server.m_Algorithm_Para_ITO.detector_limit << endl;
-						CurrentTime(); cout << "m_server.m_Algorithm_Para_ITO.detector_iter = " << m_server.m_Algorithm_Para_ITO.detector_iter << endl;
+						cout << "m_server.m_Algorithm_Para_ITO.detector_length = " << m_server.m_Algorithm_Para_ITO.detector_length << endl;
+						cout << "m_server.m_Algorithm_Para_ITO.detector_thresh = " << m_server.m_Algorithm_Para_ITO.detector_thresh << endl;
+						cout << "m_server.m_Algorithm_Para_ITO.detector_top = " << m_server.m_Algorithm_Para_ITO.detector_top << endl;
+						cout << "m_server.m_Algorithm_Para_ITO.detector_left = " << m_server.m_Algorithm_Para_ITO.detector_left << endl;
+						cout << "m_server.m_Algorithm_Para_ITO.detector_right = " << m_server.m_Algorithm_Para_ITO.detector_right << endl;
+						cout << "m_server.m_Algorithm_Para_ITO.detector_bottom = " << m_server.m_Algorithm_Para_ITO.detector_bottom << endl;
+						cout << "m_server.m_Algorithm_Para_ITO.detector_limit = " << m_server.m_Algorithm_Para_ITO.detector_limit << endl;
+						cout << "m_server.m_Algorithm_Para_ITO.detector_iter = " << m_server.m_Algorithm_Para_ITO.detector_iter << endl;
 					}
 					else
 					{
-						CurrentTime(); cout << "算子配置错误，请核对" << endl;
+						cout << "算子配置错误，请核对" << endl;
 						write_log(pFile, "%s  \n", "算子配置错误，请核对");
 					}
 				}
@@ -1151,49 +1267,52 @@ void DefectDetect(SOCKET recvsocket)
 				{
 					AlgoriFlag = -1;
 					imwrite("算法失败.bmp", src);
-					CurrentTime(); cout << "算法失败:" << err.what() << endl;
+					cout << "算法失败:" << err.what() << endl;
 				}
-				write_log(pFile, "%s \n", "结果检测筛选开始");
+				CurrentTime();
 				result = m_server.ResultProcess(DefectInfoData, AlgoriFlag, Pid); //返回NG的数量
 				write_log(pFile, "%s \n", "结果检测筛选结束");
-			}
-			int iSaveBmpStatus = 0;
-			if (0 != result){
-				iSaveBmpStatus = 1;
-				new_BmpName = OriginalNGFolderPath + "\\" + Pid + "_NG.bmp";
-				new_JpgName = CompressNGFolderPath + "\\" + Pid + "_NG.jpg"; //"_NG.jpg";
-				strResult += "#" + to_string(result) + "#"; //有缺陷	
-			}
-			else if ((0 == result)&&(0 == AlgoriFlag ))
-			{
-				if (0 == m_server.m_CDatabase.m_StationNoInfo.AlgorithmOnOrOff) //0为算法关闭  1为算法打开
-				{
-					new_BmpName = OriginalFolderPath + "\\" + Pid + ".bmp"; //关闭算法只为采图
-					new_JpgName = OriginalFolderPath + "\\" + Pid + ".jpg"; //".jpg";
-				}
-				else
-				{
-					iSaveBmpStatus = 2;
-					new_BmpName = OriginalOKFolderPath + "\\" + Pid + "_OK.bmp"; 
-					new_JpgName = CompressOKFolderPath + "\\" + Pid + "_OK.jpg"; //"_OK.jpg";
-				}		
-				strResult += "#0#"; //没有缺陷
-			}
-			else{
-				iSaveBmpStatus = 1;
-				new_BmpName = OriginalNGFolderPath + "\\" + Pid + "_NG.bmp";
-				new_JpgName = CompressNGFolderPath + "\\" + Pid + "_NG.jpg"; //"_NG.jpg";
-				strResult += "#1#"; //有缺陷	
-			}		
 
-			if (2 == nResultMode)  //强制OK
+				if (0 != result) {
+					iSaveBmpStatus = 1;
+					new_BmpName = OriginalNGFolderPath + "\\" + Pid + "_NG.bmp";
+					new_JpgName = CompressNGFolderPath + "\\" + Pid + "_NG.jpg"; //"_NG.jpg";
+					strResult += "#" + to_string(result) + "#"; //有缺陷	
+					cout << "缺陷检测结果为NG" << endl;	
+				}
+				else if ((0 == result) && (0 == AlgoriFlag))
+				{		
+					iSaveBmpStatus = 2;
+					new_BmpName = OriginalOKFolderPath + "\\" + Pid + "_OK.bmp";
+					new_JpgName = CompressOKFolderPath + "\\" + Pid + "_OK.jpg"; //"_OK.jpg";					
+					strResult += "#0#"; //没有缺陷
+					cout << "缺陷检测结果为OK" << endl;
+				}
+				else {
+					iSaveBmpStatus = 1;
+					new_BmpName = OriginalNGFolderPath + "\\" + Pid + "_NG.bmp";
+					new_JpgName = CompressNGFolderPath + "\\" + Pid + "_NG.jpg"; //"_NG.jpg";
+					strResult += "#1#"; //有缺陷	
+					cout << "缺陷检测结果为NG" << endl;
+				}
+			}
+		
+			
+			if ((1 == nResultMode)&&(0 == m_server.m_CDatabase.m_StationNoInfo.AlgorithmOnOrOff)) //0为算法关闭  1为算法打开
+			{
+				iSaveBmpStatus = 3;
+				new_BmpName = OriginalFolderPath + "\\" + Pid + ".bmp"; //关闭算法只为采图
+				new_JpgName = OriginalFolderPath + "\\" + Pid + ".jpg"; //".jpg";
+				strResult += "#0#"; //没有缺陷 
+			}
+			else if (2 == nResultMode)  //强制OK
 			{
 				iSaveBmpStatus = 2;
 				new_BmpName = OriginalOKFolderPath + "\\" + Pid + "_OK.bmp";
 				new_JpgName = CompressOKFolderPath + "\\" + Pid + "_OK.jpg"; //"_OK.jpg";
 				strResult += "#0#"; //没有缺陷   不管NG还是OK都回复0
 			}
-			if (3 == nResultMode)  //强制NG
+			else if (3 == nResultMode)  //强制NG
 			{
 				iSaveBmpStatus = 1;
 				new_BmpName = OriginalNGFolderPath + "\\" + Pid + "_NG.bmp";
@@ -1203,24 +1322,30 @@ void DefectDetect(SOCKET recvsocket)
 		
 			if (!img.empty())
 			{				
-				CurrentTime(); cout << "bmp_new_name = " << new_BmpName << endl;
+				cout << "bmp_new_name = " << new_BmpName << endl;
 				write_log(pFile, "%s %s\n", " bmp_new_name = ", new_BmpName.c_str());
-				CurrentTime(); cout << "SaveCompressedOKImg = " << m_server.m_CDatabase.m_StationNoInfo.SaveCompressedOKImg << "   SaveCompressedNGImg = " << m_server.m_CDatabase.m_StationNoInfo.SaveCompressedNGImg << endl;
-				CurrentTime(); cout << "SaveOKImg = " << m_server.m_CDatabase.m_StationNoInfo.SaveOKImg << "   SaveNGImg = " << m_server.m_CDatabase.m_StationNoInfo.SaveNGImg << endl;
+				cout << "SaveCompressedOKImg = " << m_server.m_CDatabase.m_StationNoInfo.SaveCompressedOKImg << "   SaveCompressedNGImg = " << m_server.m_CDatabase.m_StationNoInfo.SaveCompressedNGImg << endl;
+				cout << "SaveOKImg = " << m_server.m_CDatabase.m_StationNoInfo.SaveOKImg << "   SaveNGImg = " << m_server.m_CDatabase.m_StationNoInfo.SaveNGImg << endl;
 
+				if (3 == iSaveBmpStatus) // 算法关闭只为采图
+				{
+				    cout << "开始保存bmp原图" << endl;	write_log(pFile, "%s \n", "开始保存bmp原图");
+					imwrite(new_BmpName, src);
+					write_log(pFile, "%s \n", "保存bmp原图结束");	 cout << "保存bmp原图结束" << endl;
+				}
 
 				if ( (1 == m_server.m_CDatabase.m_StationNoInfo.SaveNGImg) && (0 == m_server.m_CDatabase.m_StationNoInfo.SysOnLine)&& (1 == iSaveBmpStatus))  //软件在离线 0--在线  1--离线
 				{
-					CurrentTime(); cout << "开始保存NG-bmp原图" << endl;	write_log(pFile, "%s \n", "开始保存NG-bmp原图");
+					cout << "开始保存NG-bmp原图" << endl;	write_log(pFile, "%s \n", "开始保存NG-bmp原图");
 					imwrite(new_BmpName, src);		
-					write_log(pFile, "%s \n", "保存NG-bmp原图结束");	CurrentTime(); cout << "保存NG-bmp原图结束" << endl;
+					write_log(pFile, "%s \n", "保存NG-bmp原图结束");	 cout << "保存NG-bmp原图结束" << endl;
 				}
 
 				if ((1 == m_server.m_CDatabase.m_StationNoInfo.SaveOKImg) && (0 == m_server.m_CDatabase.m_StationNoInfo.SysOnLine) && (2 == iSaveBmpStatus))   //软件在离线 0--在线  1--离线
 				{
-					CurrentTime(); cout << "开始保存OK-bmp原图" << endl;	write_log(pFile, "%s \n", "开始保存OK-bmp原图");
+					cout << "开始保存OK-bmp原图" << endl;	write_log(pFile, "%s \n", "开始保存OK-bmp原图");
 					imwrite(new_BmpName, src);
-					write_log(pFile, "%s \n", "保存OK-bmp原图结束");	CurrentTime(); cout << "保存OK-bmp原图结束" << endl;
+					write_log(pFile, "%s \n", "保存OK-bmp原图结束");	cout << "保存OK-bmp原图结束" << endl;
 				}
 				if (1 == m_server.m_CDatabase.m_StationNoInfo.SamplingCompressedImg) //1 - 保存，0 - 不保存
 				{
@@ -1228,23 +1353,23 @@ void DefectDetect(SOCKET recvsocket)
 				}
 				if (1 == m_server.m_CDatabase.m_StationNoInfo.StationDynamic) //工位图来源，1-动态，0-静态
 				{
-					CurrentTime(); cout << "开始保存jpg压缩图" << endl;		write_log(pFile, "%s \n", "开始保存jpg压缩图");
+					cout << "开始保存jpg压缩图" << endl;		write_log(pFile, "%s \n", "开始保存jpg压缩图");
 					imwrite(new_JpgName, img); //动态情况下一定保存
-					write_log(pFile, "%s \n", "结束保存jpg压缩图");		CurrentTime(); cout << "结束保存jpg压缩图" << endl;
+					write_log(pFile, "%s \n", "结束保存jpg压缩图");		 cout << "结束保存jpg压缩图" << endl;
 				}
 				else
 				{
 					if ((1 == m_server.m_CDatabase.m_StationNoInfo.SaveCompressedOKImg) && (2 == iSaveBmpStatus)) // 1-NG; 2- OK
 					{
-						CurrentTime(); cout << "开始保存OK-jpg压缩图" << endl;	write_log(pFile, "%s \n", "开始保存OK-jpg压缩图");
+						cout << "开始保存OK-jpg压缩图" << endl;	write_log(pFile, "%s \n", "开始保存OK-jpg压缩图");
 						imwrite(new_JpgName, img);
-						write_log(pFile, "%s \n", "结束保存OK-jpg压缩图");	CurrentTime(); cout << "结束保存OK-jpg压缩图" << endl;
+						write_log(pFile, "%s \n", "结束保存OK-jpg压缩图");	cout << "结束保存OK-jpg压缩图" << endl;
 					}
 					if ((1 == m_server.m_CDatabase.m_StationNoInfo.SaveCompressedNGImg) && (1 == iSaveBmpStatus)) // 1-NG; 2- OK
 					{
-						CurrentTime(); cout << "开始保存NG-jpg压缩图" << endl;	write_log(pFile, "%s \n", "开始保存NG-jpg压缩图");
+						cout << "开始保存NG-jpg压缩图" << endl;	write_log(pFile, "%s \n", "开始保存NG-jpg压缩图");
 						imwrite(new_JpgName, img);
-						write_log(pFile, "%s \n", "结束保存NG-jpg压缩图");	CurrentTime(); cout << "结束保存NG-jpg压缩图" << endl;
+						write_log(pFile, "%s \n", "结束保存NG-jpg压缩图");	cout << "结束保存NG-jpg压缩图" << endl;
 					}
 				}
 	
@@ -1264,20 +1389,40 @@ void DefectDetect(SOCKET recvsocket)
 
 			char mess[100];		  // "#产品ID#结果#磁盘结果@";   OK--0;  NG---实际数量
 			strcpy(mess, strResult.c_str());
-			int isend = send(recvsocket, mess, (int)strlen(mess), 0);
-			write_log(pFile, "Sending message data : %s \n", mess);
-			CurrentTime(); cout << "Sending message data ：" << mess << endl;
-			if (isend == 0 || isend == SOCKET_ERROR)
+			int isend;
+			while (true)
 			{
-				write_log(pFile, "%s \n", "Sending message failed, disconnect");
-				CurrentTime(); cout << "Sending message failed, disconnect" << endl;
-				//break;
-			}
-			else
-			{
-				write_log(pFile, "%s \n", "..........next ......");
-				CurrentTime(); cout << "..........next ......" << endl;
-			}		
+				std::lock_guard<std::mutex> my_lock_guard(my_mutex_1);
+				isend = send(recvsocket, mess, (int)strlen(mess), 0);
+				if (SOCKET_ERROR == isend)
+				{
+					int err = WSAGetLastError();
+					if (err == WSAEWOULDBLOCK)
+					{
+						Sleep(1);
+						continue;
+					}
+					else
+					{
+						write_log(pFile, "%s \n", " SendDetect message failed");
+						cout << "SendDetect message failed" << endl;					
+					}
+				}
+				if (isend == 0 )
+				{
+					write_log(pFile, "%s \n", "Sending message failed, disconnect");
+					cout << "Sending message failed, disconnect" << endl;					
+				}
+				else
+				{
+					cout << "Sending message data ：" << mess << endl;
+					write_log(pFile, "Sending message data ： %s \n", mess);
+					write_log(pFile, "%s \n", "..........next ......");
+					cout << "..........next ......" << endl;
+					break;
+				}
+			}			
+			
 		}
 		int ii = 0;
 		while (RecvID.empty())
@@ -1285,7 +1430,7 @@ void DefectDetect(SOCKET recvsocket)
 			if (ControlF)
 			{
 				write_log(pFile, "%s \n", "End of algorithm processing");
-				CurrentTime(); cout << "End of algorithm processing" << endl;
+				cout << "End of algorithm processing" << endl;
 				return;
 			}
 		
@@ -1293,7 +1438,7 @@ void DefectDetect(SOCKET recvsocket)
 			Sleep(500);
 			if ((ii % 6) == 0)
 			{
-				CurrentTime(); cout << "RecvImg is empty，等待相机采图 ..." << endl;
+				cout << "RecvImg is empty，等待相机采图 ..." << endl;
 			}			
 		}
 		if (ControlF)
@@ -1574,8 +1719,8 @@ int Server::ResultProcess( map<int, vector<string>>  &DefectInfoData, int Aflag,
 				pstDefectDetectResult->strDefectFeatures = res_str;
 			}
 
-			write_log(pFile, "%s %s\n", " NG Small Img Num =", to_string(Defectnum));
-			write_log(pFile, "%s %s\n", " current Img ProductID =", pstDefectDetectResult->strProductID);
+			write_log(pFile, "%s %s\n", " NG Small Img Num =", to_string(Defectnum).c_str());
+			write_log(pFile, "%s %s\n", " current Img ProductID =", pstDefectDetectResult->strProductID.c_str());
 
 			if (strData == "")
 			{
@@ -1636,7 +1781,7 @@ void Server::initInfo()
 	string localIP = GetLocalIpAddress();
 	write_log(pFile, "%s %s\n", "localIP = ", localIP.c_str());
 	string strQuery;
-	strQuery = "SELECT  table_station.ToolPara , table_station.DefectDefine, table_station.DefectScreening, table_station.Features,  table_config.NowProName,   \
+	strQuery = "SELECT  table_station.ToolPara ,table_station.DefectNum , table_station.DefectDefine, table_station.DefectScreening, table_station.Features,  table_config.NowProName,   \
 				table_config.NowBatchName, table_config.DiskSpaceAlarm, table_config.DiskSpaceDelete ,  table_config.SysOnLine, table_config.SysLang,  \
 				table_config.SaveOKImg, table_config.SaveNGImg, table_config.SaveCompressedOKImg, table_config.SaveCompressedNGImg, table_config.AlgorithmOnOrOff, table_config.SamplingCompressedImg,	\
 				table_config.StationDynamic FROM table_station, table_config  WHERE table_config.NowProName = table_station.ProName AND table_station.IP = '" + localIP +"'; ";
@@ -1839,8 +1984,8 @@ string Server::GetLocalIpAddress()
 	{
 		localIP = "127.0.0.1";
 	}
-	CurrentTime(); cout << "网卡IP地址如下：" << endl;
-	CurrentTime(); cout << "IP 地址：" << localIP << endl;
+	cout << "网卡IP地址如下：" << endl;
+	cout << "IP 地址：" << localIP << endl;
 
 	return localIP;
 
@@ -1886,17 +2031,17 @@ void Server::ConnectCamera()
 	 {
 		 remove(strNewCcfPath.c_str());
 	 }
-	 CurrentTime(); cout << "strOldCcfOath = "<< strOldCcfOath << endl;
-	 CurrentTime(); cout << "strNewCcfPath = " << strNewCcfPath << endl;
+	 cout << "strOldCcfOath = "<< strOldCcfOath << endl;
+	 cout << "strNewCcfPath = " << strNewCcfPath << endl;
 	 if ( !CopyFile(strOldCcfOath.c_str(), strNewCcfPath.c_str(), false))
 	 {
-		 CurrentTime(); cout << "Copy ccf File failed! "<< endl;
+		 cout << "Copy ccf File failed! "<< endl;
 		 write_log(pFile, "%s \n", "Copy ccf File failed! ");
 		 getchar();
 		 return;
 	 }
 	
-	 CurrentTime(); cout << "Camera start connect... " << endl;
+	 cout << "Camera start connect... " << endl;
 	 write_log(pFile, "%s \n", "Camera start connect... ");
 	 CameraInterface(m_CDatabase.m_StationNoInfo.strToolPara, m_CDatabase.m_StationNoInfo.SaveOKImg);	
 }

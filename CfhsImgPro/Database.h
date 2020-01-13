@@ -8,6 +8,7 @@ using namespace std;
 typedef struct _StationNoInfo
 {
 	string	strToolPara;		 //工具参数
+	int		DefectNum;			//缺陷数量
 	string	strDefectDefine;	 //缺陷数据
 	string  strDefectScreensing; //缺陷筛选
 	string	strFeatures;		 //语言定义
